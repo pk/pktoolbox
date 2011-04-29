@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E96E18EF136B54E40090E90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18EE136B54E40090E90A /* UIKit.framework */; };
+		E96E18F1136B54E40090E90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F0136B54E40090E90A /* Foundation.framework */; };
+		E96E18F3136B54E40090E90A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F2136B54E40090E90A /* CoreGraphics.framework */; };
+		E96E18F9136B54E40090E90A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E96E18F7136B54E40090E90A /* InfoPlist.strings */; };
+		E96E18FC136B54E40090E90A /* PKToolboxTests.h in Resources */ = {isa = PBXBuildFile; fileRef = E96E18FB136B54E40090E90A /* PKToolboxTests.h */; };
+		E96E18FE136B54E40090E90A /* PKToolboxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E18FD136B54E40090E90A /* PKToolboxTests.m */; };
+		E96E1931136B589B0090E90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18EE136B54E40090E90A /* UIKit.framework */; };
+		E96E1932136B589B0090E90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F0136B54E40090E90A /* Foundation.framework */; };
+		E96E1933136B589B0090E90A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F2136B54E40090E90A /* CoreGraphics.framework */; };
+		E96E1939136B589B0090E90A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E96E1937136B589B0090E90A /* InfoPlist.strings */; };
+		E96E193C136B589B0090E90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E193B136B589B0090E90A /* main.m */; };
+		E96E193F136B589B0090E90A /* PKToolboxExamplesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E193E136B589B0090E90A /* PKToolboxExamplesAppDelegate.m */; };
+		E96E1942136B589B0090E90A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E1940136B589B0090E90A /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E96E18E2136B54980090E90A /* PKNavigationItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKNavigationItem.h; sourceTree = "<group>"; };
+		E96E18E3136B54980090E90A /* PKNavigationItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKNavigationItem.m; sourceTree = "<group>"; };
+		E96E18E4136B54980090E90A /* PKWebBrowserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKWebBrowserController.h; sourceTree = "<group>"; };
+		E96E18E5136B54980090E90A /* PKWebBrowserController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKWebBrowserController.m; sourceTree = "<group>"; };
+		E96E18EB136B54E40090E90A /* PKToolboxTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKToolboxTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96E18EE136B54E40090E90A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E96E18F0136B54E40090E90A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E96E18F2136B54E40090E90A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E96E18F6136B54E40090E90A /* PKToolboxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PKToolboxTests-Info.plist"; sourceTree = "<group>"; };
+		E96E18F8136B54E40090E90A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E96E18FA136B54E40090E90A /* PKToolboxTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKToolboxTests-Prefix.pch"; sourceTree = "<group>"; };
+		E96E18FB136B54E40090E90A /* PKToolboxTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKToolboxTests.h; sourceTree = "<group>"; };
+		E96E18FD136B54E40090E90A /* PKToolboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKToolboxTests.m; sourceTree = "<group>"; };
+		E96E192F136B589B0090E90A /* PKToolboxExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PKToolboxExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96E1936136B589B0090E90A /* PKToolboxExamples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PKToolboxExamples-Info.plist"; sourceTree = "<group>"; };
+		E96E1938136B589B0090E90A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E96E193A136B589B0090E90A /* PKToolboxExamples-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKToolboxExamples-Prefix.pch"; sourceTree = "<group>"; };
+		E96E193B136B589B0090E90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E96E193D136B589B0090E90A /* PKToolboxExamplesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKToolboxExamplesAppDelegate.h; sourceTree = "<group>"; };
+		E96E193E136B589B0090E90A /* PKToolboxExamplesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKToolboxExamplesAppDelegate.m; sourceTree = "<group>"; };
+		E96E1941136B589B0090E90A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E96E18E7136B54E40090E90A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96E18EF136B54E40090E90A /* UIKit.framework in Frameworks */,
+				E96E18F1136B54E40090E90A /* Foundation.framework in Frameworks */,
+				E96E18F3136B54E40090E90A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E96E192C136B589B0090E90A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96E1931136B589B0090E90A /* UIKit.framework in Frameworks */,
+				E96E1932136B589B0090E90A /* Foundation.framework in Frameworks */,
+				E96E1933136B589B0090E90A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E96E18D7136B539B0090E90A = {
+			isa = PBXGroup;
+			children = (
+				E96E18E0136B54980090E90A /* Foundation */,
+				E96E18E1136B54980090E90A /* UIKit */,
+				E96E18F4136B54E40090E90A /* PKToolboxTests */,
+				E96E1934136B589B0090E90A /* PKToolboxExamples */,
+				E96E18ED136B54E40090E90A /* Frameworks */,
+				E96E18EC136B54E40090E90A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E96E18E0136B54980090E90A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		E96E18E1136B54980090E90A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E96E18E2136B54980090E90A /* PKNavigationItem.h */,
+				E96E18E3136B54980090E90A /* PKNavigationItem.m */,
+				E96E18E4136B54980090E90A /* PKWebBrowserController.h */,
+				E96E18E5136B54980090E90A /* PKWebBrowserController.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		E96E18EC136B54E40090E90A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E96E18EB136B54E40090E90A /* PKToolboxTests.octest */,
+				E96E192F136B589B0090E90A /* PKToolboxExamples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E96E18ED136B54E40090E90A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E96E18EE136B54E40090E90A /* UIKit.framework */,
+				E96E18F0136B54E40090E90A /* Foundation.framework */,
+				E96E18F2136B54E40090E90A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E96E18F4136B54E40090E90A /* PKToolboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				E96E18FB136B54E40090E90A /* PKToolboxTests.h */,
+				E96E18FD136B54E40090E90A /* PKToolboxTests.m */,
+				E96E18F5136B54E40090E90A /* Supporting Files */,
+			);
+			path = PKToolboxTests;
+			sourceTree = "<group>";
+		};
+		E96E18F5136B54E40090E90A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E96E18F6136B54E40090E90A /* PKToolboxTests-Info.plist */,
+				E96E18F7136B54E40090E90A /* InfoPlist.strings */,
+				E96E18FA136B54E40090E90A /* PKToolboxTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E96E1934136B589B0090E90A /* PKToolboxExamples */ = {
+			isa = PBXGroup;
+			children = (
+				E96E193D136B589B0090E90A /* PKToolboxExamplesAppDelegate.h */,
+				E96E193E136B589B0090E90A /* PKToolboxExamplesAppDelegate.m */,
+				E96E1940136B589B0090E90A /* MainWindow.xib */,
+				E96E1935136B589B0090E90A /* Supporting Files */,
+			);
+			path = PKToolboxExamples;
+			sourceTree = "<group>";
+		};
+		E96E1935136B589B0090E90A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E96E1936136B589B0090E90A /* PKToolboxExamples-Info.plist */,
+				E96E1937136B589B0090E90A /* InfoPlist.strings */,
+				E96E193A136B589B0090E90A /* PKToolboxExamples-Prefix.pch */,
+				E96E193B136B589B0090E90A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E96E18EA136B54E40090E90A /* PKToolboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E96E18FF136B54E40090E90A /* Build configuration list for PBXNativeTarget "PKToolboxTests" */;
+			buildPhases = (
+				E96E18E6136B54E40090E90A /* Sources */,
+				E96E18E7136B54E40090E90A /* Frameworks */,
+				E96E18E8136B54E40090E90A /* Resources */,
+				E96E18E9136B54E40090E90A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKToolboxTests;
+			productName = PKToolboxTests;
+			productReference = E96E18EB136B54E40090E90A /* PKToolboxTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E96E192E136B589B0090E90A /* PKToolboxExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E96E1943136B589B0090E90A /* Build configuration list for PBXNativeTarget "PKToolboxExamples" */;
+			buildPhases = (
+				E96E192B136B589B0090E90A /* Sources */,
+				E96E192C136B589B0090E90A /* Frameworks */,
+				E96E192D136B589B0090E90A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKToolboxExamples;
+			productName = PKToolboxExamples;
+			productReference = E96E192F136B589B0090E90A /* PKToolboxExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E96E18D9136B539B0090E90A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Fry-it, Limited";
+			};
+			buildConfigurationList = E96E18DC136B539B0090E90A /* Build configuration list for PBXProject "PKToolbox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E96E18D7136B539B0090E90A;
+			productRefGroup = E96E18EC136B54E40090E90A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E96E18EA136B54E40090E90A /* PKToolboxTests */,
+				E96E192E136B589B0090E90A /* PKToolboxExamples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E96E18E8136B54E40090E90A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96E18F9136B54E40090E90A /* InfoPlist.strings in Resources */,
+				E96E18FC136B54E40090E90A /* PKToolboxTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E96E192D136B589B0090E90A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96E1939136B589B0090E90A /* InfoPlist.strings in Resources */,
+				E96E1942136B589B0090E90A /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E96E18E9136B54E40090E90A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E96E18E6136B54E40090E90A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96E18FE136B54E40090E90A /* PKToolboxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E96E192B136B589B0090E90A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96E193C136B589B0090E90A /* main.m in Sources */,
+				E96E193F136B589B0090E90A /* PKToolboxExamplesAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E96E18F7136B54E40090E90A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E96E18F8136B54E40090E90A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E96E1937136B589B0090E90A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E96E1938136B589B0090E90A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E96E1940136B589B0090E90A /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E96E1941136B589B0090E90A /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E96E18DE136B539B0090E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E96E18DF136B539B0090E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E96E1900136B54E40090E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKToolboxTests/PKToolboxTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PKToolboxTests/PKToolboxTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E96E1901136B54E40090E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKToolboxTests/PKToolboxTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PKToolboxTests/PKToolboxTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		E96E1944136B589B0090E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKToolboxExamples/PKToolboxExamples-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PKToolboxExamples/PKToolboxExamples-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E96E1945136B589B0090E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKToolboxExamples/PKToolboxExamples-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PKToolboxExamples/PKToolboxExamples-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E96E18DC136B539B0090E90A /* Build configuration list for PBXProject "PKToolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E96E18DE136B539B0090E90A /* Debug */,
+				E96E18DF136B539B0090E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E96E18FF136B54E40090E90A /* Build configuration list for PBXNativeTarget "PKToolboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E96E1900136B54E40090E90A /* Debug */,
+				E96E1901136B54E40090E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E96E1943136B589B0090E90A /* Build configuration list for PBXNativeTarget "PKToolboxExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E96E1944136B589B0090E90A /* Debug */,
+				E96E1945136B589B0090E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E96E18D9136B539B0090E90A /* Project object */;
+}
