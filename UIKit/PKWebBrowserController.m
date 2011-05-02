@@ -108,10 +108,20 @@ static int const PKWebBrowserBarHeight = 44;
                                                       target:self
                                                       action:@selector(refresh)];
 
+    UIBarButtonItem *closeButton =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                      target:self
+                                                      action:@selector(close)];
+
     PKNavigationItem *item = [[PKNavigationItem alloc] initWithTitle:self.title];
     [item setLeftButtons:backButton, forwardButton, nil];
-    [item setRightButtons:refreshButton, nil];
+    [item setRightButtons:refreshButton, closeButton, nil];
     [self.navigationBar setItems:[NSArray arrayWithObject:item] animated:NO];
+    [backButton release];
+    [forwardButton release];
+    [refreshButton release];
+    [closeButton release];
+    [item release];
 }
 
 - (void)viewDidUnload {
@@ -165,6 +175,10 @@ static int const PKWebBrowserBarHeight = 44;
 - (IBAction)refresh {
     [self.webView stopLoading];
     [self.webView reload];
+}
+
+- (IBAction)close {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 

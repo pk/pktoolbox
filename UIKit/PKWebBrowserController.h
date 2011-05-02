@@ -29,5 +29,6 @@
 - (IBAction)back;
 - (IBAction)forward;
 - (IBAction)refresh;
+- (IBAction)close;
 
 @end
