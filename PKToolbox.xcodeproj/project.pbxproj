@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E93514A4136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */; };
+		E93514A5136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */; };
+		E93514AA136ED26A001D0F1D /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E93514A8136ED26A001D0F1D /* MainWindow-iPad.xib */; };
+		E93514B0136ED2E6001D0F1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E93514AC136ED2E6001D0F1D /* InfoPlist.strings */; };
+		E93514B1136ED2E6001D0F1D /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E93514AE136ED2E6001D0F1D /* MainWindow-iPhone.xib */; };
 		E96E18EF136B54E40090E90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18EE136B54E40090E90A /* UIKit.framework */; };
 		E96E18F1136B54E40090E90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F0136B54E40090E90A /* Foundation.framework */; };
 		E96E18F3136B54E40090E90A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F2136B54E40090E90A /* CoreGraphics.framework */; };
@@ -16,13 +21,19 @@
 		E96E1931136B589B0090E90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18EE136B54E40090E90A /* UIKit.framework */; };
 		E96E1932136B589B0090E90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F0136B54E40090E90A /* Foundation.framework */; };
 		E96E1933136B589B0090E90A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E18F2136B54E40090E90A /* CoreGraphics.framework */; };
-		E96E1939136B589B0090E90A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E96E1937136B589B0090E90A /* InfoPlist.strings */; };
 		E96E193C136B589B0090E90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E193B136B589B0090E90A /* main.m */; };
 		E96E193F136B589B0090E90A /* PKToolboxExamplesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E193E136B589B0090E90A /* PKToolboxExamplesAppDelegate.m */; };
-		E96E1942136B589B0090E90A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E1940136B589B0090E90A /* MainWindow.xib */; };
+		E96E1949136B608B0090E90A /* PKNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E18E3136B54980090E90A /* PKNavigationItem.m */; };
+		E96E194A136B608B0090E90A /* PKWebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E18E5136B54980090E90A /* PKWebBrowserController.m */; };
+		E9CD913E136ED36B008A67EC /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E93514AE136ED2E6001D0F1D /* MainWindow-iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E93514A2136EC71F001D0F1D /* PKMultiButtonBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKMultiButtonBarButtonItem.h; sourceTree = "<group>"; };
+		E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKMultiButtonBarButtonItem.m; sourceTree = "<group>"; };
+		E93514A9136ED26A001D0F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E93514AD136ED2E6001D0F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E93514AF136ED2E6001D0F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MainWindow-iPhone.xib"; sourceTree = "<group>"; };
 		E96E18E2136B54980090E90A /* PKNavigationItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKNavigationItem.h; sourceTree = "<group>"; };
 		E96E18E3136B54980090E90A /* PKNavigationItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKNavigationItem.m; sourceTree = "<group>"; };
 		E96E18E4136B54980090E90A /* PKWebBrowserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKWebBrowserController.h; sourceTree = "<group>"; };
@@ -38,12 +49,10 @@
 		E96E18FD136B54E40090E90A /* PKToolboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKToolboxTests.m; sourceTree = "<group>"; };
 		E96E192F136B589B0090E90A /* PKToolboxExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PKToolboxExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96E1936136B589B0090E90A /* PKToolboxExamples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PKToolboxExamples-Info.plist"; sourceTree = "<group>"; };
-		E96E1938136B589B0090E90A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96E193A136B589B0090E90A /* PKToolboxExamples-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKToolboxExamples-Prefix.pch"; sourceTree = "<group>"; };
 		E96E193B136B589B0090E90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E96E193D136B589B0090E90A /* PKToolboxExamplesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKToolboxExamplesAppDelegate.h; sourceTree = "<group>"; };
 		E96E193E136B589B0090E90A /* PKToolboxExamplesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKToolboxExamplesAppDelegate.m; sourceTree = "<group>"; };
-		E96E1941136B589B0090E90A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E93514A7136ED269001D0F1D /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				E93514A8136ED26A001D0F1D /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		E93514AB136ED2E6001D0F1D /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				E93514AC136ED2E6001D0F1D /* InfoPlist.strings */,
+				E93514AE136ED2E6001D0F1D /* MainWindow-iPhone.xib */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
 		E96E18D7136B539B0090E90A = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +122,8 @@
 				E96E18E3136B54980090E90A /* PKNavigationItem.m */,
 				E96E18E4136B54980090E90A /* PKWebBrowserController.h */,
 				E96E18E5136B54980090E90A /* PKWebBrowserController.m */,
+				E93514A2136EC71F001D0F1D /* PKMultiButtonBarButtonItem.h */,
+				E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -142,9 +170,10 @@
 		E96E1934136B589B0090E90A /* PKToolboxExamples */ = {
 			isa = PBXGroup;
 			children = (
+				E93514AB136ED2E6001D0F1D /* iPhone */,
+				E93514A7136ED269001D0F1D /* iPad */,
 				E96E193D136B589B0090E90A /* PKToolboxExamplesAppDelegate.h */,
 				E96E193E136B589B0090E90A /* PKToolboxExamplesAppDelegate.m */,
-				E96E1940136B589B0090E90A /* MainWindow.xib */,
 				E96E1935136B589B0090E90A /* Supporting Files */,
 			);
 			path = PKToolboxExamples;
@@ -154,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				E96E1936136B589B0090E90A /* PKToolboxExamples-Info.plist */,
-				E96E1937136B589B0090E90A /* InfoPlist.strings */,
 				E96E193A136B589B0090E90A /* PKToolboxExamples-Prefix.pch */,
 				E96E193B136B589B0090E90A /* main.m */,
 			);
@@ -232,6 +260,8 @@
 			files = (
 				E96E18F9136B54E40090E90A /* InfoPlist.strings in Resources */,
 				E96E18FC136B54E40090E90A /* PKToolboxTests.h in Resources */,
+				E93514B0136ED2E6001D0F1D /* InfoPlist.strings in Resources */,
+				E93514B1136ED2E6001D0F1D /* MainWindow-iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96E1939136B589B0090E90A /* InfoPlist.strings in Resources */,
-				E96E1942136B589B0090E90A /* MainWindow.xib in Resources */,
+				E93514AA136ED26A001D0F1D /* MainWindow-iPad.xib in Resources */,
+				E9CD913E136ED36B008A67EC /* MainWindow-iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96E18FE136B54E40090E90A /* PKToolboxTests.m in Sources */,
+				E93514A4136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,12 +308,39 @@
 			files = (
 				E96E193C136B589B0090E90A /* main.m in Sources */,
 				E96E193F136B589B0090E90A /* PKToolboxExamplesAppDelegate.m in Sources */,
+				E96E1949136B608B0090E90A /* PKNavigationItem.m in Sources */,
+				E96E194A136B608B0090E90A /* PKWebBrowserController.m in Sources */,
+				E93514A5136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E93514A8136ED26A001D0F1D /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E93514A9136ED26A001D0F1D /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
+		E93514AC136ED2E6001D0F1D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E93514AD136ED2E6001D0F1D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E93514AE136ED2E6001D0F1D /* MainWindow-iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E93514AF136ED2E6001D0F1D /* en */,
+			);
+			name = "MainWindow-iPhone.xib";
+			sourceTree = "<group>";
+		};
 		E96E18F7136B54E40090E90A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,34 +349,24 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		E96E1937136B589B0090E90A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E96E1938136B589B0090E90A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E96E1940136B589B0090E90A /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E96E1941136B589B0090E90A /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E96E18DE136B539B0090E90A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		E96E18DF136B539B0090E90A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -400,6 +448,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,6 +471,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -446,6 +496,7 @@
 				E96E1901136B54E40090E90A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E96E1943136B589B0090E90A /* Build configuration list for PBXNativeTarget "PKToolboxExamples" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +505,7 @@
 				E96E1945136B589B0090E90A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

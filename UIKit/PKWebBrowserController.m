@@ -5,52 +5,43 @@
 //  Created by Pavel Kunc on 29/04/2011.
 //  Copyright (C) 2011 by Pavel Kunc, http://pavelkunc.cz
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
-//
 
 #import "PKWebBrowserController.h"
 #import "PKNavigationItem.h"
 
 
+static int const PKWebBrowserBarHeight = 44;
+
+
 @implementation PKWebBrowserController
 
-@synthesize navBar  = navBar_;
-@synthesize toolBar = toolBar_;
-@synthesize webView = webView_;
+@synthesize loadingTitle  = loadingTitle_;
+@synthesize navigationBar = navBar_;
+@synthesize toolBar       = toolBar_;
+@synthesize webView       = webView_;
 
 
 #pragma mark - Initialization/Memory management
 
 - (id)init {
-    return [self initWithNibName:@"PKWebBrowser" bundle:nil];
+    self = [super init];
+    if (self) {
+        loadingTitle_ = NSLocalizedString(@"Loading...", nil);
+    }
+    return self;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Loading...";
+        loadingTitle_ = NSLocalizedString(@"Loading...", nil);
     }
     return self;
 }
 
 - (void)dealloc {
-    [navBar_ release];
+    [loadingTitle_ release];
+    [navigationBar_ release];
     [toolBar_ release];
     [webView_ release];
     [super dealloc];
@@ -62,6 +53,42 @@
 
 
 #pragma mark - View lifecycle
+
+- (void)loadView {
+    CGRect screen = [[UIScreen mainScreen] applicationFrame];
+    self.view = [[UIView alloc] initWithFrame:screen];
+    self.view.autoresizesSubviews = YES;
+    self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+
+    CGRect frame = CGRectMake(0,
+                              0,
+                              self.view.frame.size.width,
+                              PKWebBrowserBarHeight);
+    self.navigationBar = [[UINavigationBar alloc] initWithFrame:frame];
+    self.navigationBar.autoresizesSubviews = YES;
+    self.navigationBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin);
+
+    frame = CGRectMake(0,
+                       self.navigationBar.frame.size.height,
+                       self.view.frame.size.width,
+                       self.view.frame.size.height - self.navigationBar.frame.size.height);
+    self.webView = [[UIWebView alloc] initWithFrame:frame];
+    self.webView.delegate = self;
+    self.webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+
+    /*
+    frame = CGRectMake(0,
+                       self.navigationBar.frame.size.height + self.webView.frame.size.height,
+                       self.view.frame.size.width,
+                       PKWebBrowserBarHeight);
+    self.toolBar = [[UIToolbar alloc] initWithFrame:frame];
+    self.toolBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
+    [self.view addSubview:self.toolBar];
+    */
+
+    [self.view addSubview:self.navigationBar];
+    [self.view addSubview:self.webView];
+}
 
 - (void)viewDidLoad {
     UIBarButtonItem *backButton =
@@ -76,35 +103,20 @@
                                         target:self
                                         action:@selector(forward)];
 
-
-    UIImage *reloadIcon = [UIImage imageNamed:@"refresh.png"];
-    UIBarButtonItem *reloadButton =
-        [[UIBarButtonItem alloc] initWithImage:reloadIcon
-                                         style:UIBarButtonItemStylePlain
-                                        target:self
-                                        action:@selector(reload)];
-
-    UIBarButtonItem *closeButton =
-        [[UIBarButtonItem alloc] initWithTitle:@"\u2716"
-                                         style:UIBarButtonItemStylePlain
-                                        target:nil
-                                        action:nil];
+    UIBarButtonItem *refreshButton =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                      target:self
+                                                      action:@selector(refresh)];
 
     PKNavigationItem *item = [[PKNavigationItem alloc] initWithTitle:self.title];
-
-    [item setLeftButtons:backButton,
-                         forwardButton,
-                         reloadButton,
-                         nil];
-
-    [item setRightButtons:closeButton, nil];
-
-    [self.navBar setItems:[NSArray arrayWithObject:item] animated:NO];
+    [item setLeftButtons:backButton, forwardButton, nil];
+    [item setRightButtons:refreshButton, nil];
+    [self.navigationBar setItems:[NSArray arrayWithObject:item] animated:NO];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    self.navBar = nil;
+    self.navigationBar = nil;
     self.toolBar = nil;
     self.webView = nil;
 }
@@ -136,11 +148,6 @@
 
 #pragma mark - UI interaction
 
-- (IBAction)reload {
-    [self.webView stopLoading];
-    [self.webView reload];
-}
-
 - (IBAction)back {
     if ([self.webView canGoBack]) {
         [self.webView stopLoading];
@@ -155,6 +162,11 @@
     }
 }
 
+- (IBAction)refresh {
+    [self.webView stopLoading];
+    [self.webView reload];
+}
+
 
 #pragma mark - UIWebView delegate
 
@@ -165,17 +177,19 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
+    self.navigationBar.topItem.title = self.title = self.loadingTitle;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
 
     NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title;"];
-    self.navBar.topItem.title = self.title = title;
+    self.navigationBar.topItem.title = self.title = title;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
+    self.navigationBar.topItem.title = self.title = @"";
 }
 
 @end
