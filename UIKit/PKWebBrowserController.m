@@ -12,6 +12,11 @@
 
 static int const PKWebBrowserBarHeight = 44;
 
+@interface PKWebBrowserController ()
+@property (nonatomic, retain, readwrite) UIBarButtonItem *backBarButton;
+@property (nonatomic, retain, readwrite) UIBarButtonItem *forwardBarButton;
+@end
+
 
 @implementation PKWebBrowserController
 
@@ -20,6 +25,10 @@ static int const PKWebBrowserBarHeight = 44;
 @synthesize toolBar       = toolBar_;
 @synthesize webView       = webView_;
 
+@synthesize backBarButton = backBarButton_;
+@synthesize forwardBarButton = forwardBarButton_;
+
+@synthesize presentedModally = presentedModally_;
 
 #pragma mark - Initialization/Memory management
 
@@ -27,6 +36,7 @@ static int const PKWebBrowserBarHeight = 44;
     self = [super init];
     if (self) {
         loadingTitle_ = NSLocalizedString(@"Loading...", nil);
+        presentedModally_ = NO;
     }
     return self;
 }
@@ -44,6 +54,8 @@ static int const PKWebBrowserBarHeight = 44;
     [navigationBar_ release];
     [toolBar_ release];
     [webView_ release];
+    [backBarButton_ release];
+    [forwardBarButton_ release];
     [super dealloc];
 }
 
@@ -96,31 +108,54 @@ static int const PKWebBrowserBarHeight = 44;
                                          style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(back)];
+    backButton.width = 20.0;
+    backButton.enabled = NO;
+    self.backBarButton = backButton;
 
     UIBarButtonItem *forwardButton =
         [[UIBarButtonItem alloc] initWithTitle:@"\u25B6"
                                          style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(forward)];
+    forwardButton.width = 20.0;
+    forwardButton.enabled = NO;
+    self.forwardBarButton = forwardButton;
 
     UIBarButtonItem *refreshButton =
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                       target:self
                                                       action:@selector(refresh)];
+    refreshButton.tag = UIBarButtonSystemItemRefresh;
 
-    UIBarButtonItem *closeButton =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                      target:self
-                                                      action:@selector(close)];
+    UIBarButtonItem *spacerButton =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                      target:nil
+                                                      action:nil];
+    spacerButton.tag = UIBarButtonSystemItemFlexibleSpace;
 
     PKNavigationItem *item = [[PKNavigationItem alloc] initWithTitle:self.title];
-    [item setLeftButtons:backButton, forwardButton, nil];
-    [item setRightButtons:refreshButton, closeButton, nil];
+    [item setLeftButtons:spacerButton,
+                         backButton,
+                         forwardButton,
+                         spacerButton,
+                         refreshButton,
+                         spacerButton, nil];
+
+    if (self.presentedModally) {
+        UIBarButtonItem *closeButton =
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                          target:self
+                                                          action:@selector(close)];
+        closeButton.tag = UIBarButtonSystemItemDone;
+        [item setRightButtons: closeButton, nil];
+        [closeButton release];
+    }
+
     [self.navigationBar setItems:[NSArray arrayWithObject:item] animated:NO];
+    [spacerButton release];
     [backButton release];
     [forwardButton release];
     [refreshButton release];
-    [closeButton release];
     [item release];
 }
 
@@ -129,6 +164,8 @@ static int const PKWebBrowserBarHeight = 44;
     self.navigationBar = nil;
     self.toolBar = nil;
     self.webView = nil;
+    self.backBarButton = nil;
+    self.forwardBarButton = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -199,6 +236,9 @@ static int const PKWebBrowserBarHeight = 44;
 
     NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title;"];
     self.navigationBar.topItem.title = self.title = title;
+
+    self.backBarButton.enabled = [self.webView canGoBack] ? YES : NO;
+    self.forwardBarButton.enabled = [self.webView canGoForward] ? YES : NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

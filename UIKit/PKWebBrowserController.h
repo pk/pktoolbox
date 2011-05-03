@@ -15,12 +15,19 @@
     UINavigationBar *navigationBar_;
     UIToolbar       *toolBar_;
     UIWebView       *webView_;
+
+    UIBarButtonItem *forwardBarButton_;
+    UIBarButtonItem *backBarButton_;
+
+    BOOL presentedModally_;
 }
 
 @property (nonatomic, retain, readwrite) UINavigationBar *navigationBar;
 @property (nonatomic, retain, readwrite) UIToolbar       *toolBar;
 @property (nonatomic, retain, readwrite) UIWebView       *webView;
 @property (nonatomic, copy, readwrite)   NSString        *loadingTitle;
+
+@property (nonatomic, assign, readwrite, getter=isPresentedModally)   BOOL presentedModally;
 
 - (void)loadRequest:(NSURLRequest *)aRequest;
 - (void)loadURL:(NSURL *)aURL;
