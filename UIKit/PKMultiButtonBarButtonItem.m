@@ -29,8 +29,26 @@
 }
 
 + (UIBarButtonItem *)barButtonItemWithArray:(NSArray *)aButtons {
-    int width = [aButtons count] * 40;
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, width, 44.01)];
+    float width = 0.0;
+    for (UIBarButtonItem *button in aButtons) {
+        if (button.width == 0.0) {
+            switch (button.tag) {
+                case UIBarButtonSystemItemRefresh:
+                    width += 30.0;
+                    break;
+                case UIBarButtonSystemItemDone:
+                    width += 55.0;
+                    break;
+                default:
+                    break;
+            }
+            continue;
+        }
+        width += button.width;
+    }
+    width += (float)[aButtons count] * 5.0;
+
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, width, 44.01)];
     toolbar.translucent = YES;
     [toolbar setBarStyle:UIBarStyleDefault];
     [toolbar setItems:aButtons animated:NO];
