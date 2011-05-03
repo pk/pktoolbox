@@ -55,3 +55,10 @@ PKNavigationItem *item = [[PKNavigationItem alloc] initWithTitle:@"My Nav Item"]
 ...
 </code></pre>
 
+
+## PKMultiButtonBarButtonItem
+
+### Examples
+
+<pre><code>
+</code></pre>
