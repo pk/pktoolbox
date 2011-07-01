@@ -31,18 +31,14 @@ static int const PKWebBrowserBarHeight = 44;
 #pragma mark - Initialization/Memory management
 
 - (id)init {
-    self = [super init];
-    if (self) {
-        loadingTitle_ = NSLocalizedString(@"Loading...", nil);
-        presentedModally_ = NO;
-    }
-    return self;
+    return [self initWithNibName:nil bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self != nil) {
         loadingTitle_ = NSLocalizedString(@"Loading...", nil);
+        presentedModally_ = NO;
     }
     return self;
 }
