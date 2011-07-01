@@ -209,6 +209,7 @@ static int const PKWebBrowserBarHeight = 44;
 }
 
 - (IBAction)close {
+    [self.webView stopLoading];
     [self dismissModalViewControllerAnimated:YES];
 }
 
