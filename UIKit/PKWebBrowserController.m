@@ -20,15 +20,13 @@ static int const PKWebBrowserBarHeight = 44;
 
 @implementation PKWebBrowserController
 
-@synthesize loadingTitle  = loadingTitle_;
-@synthesize navigationBar = navBar_;
-@synthesize toolBar       = toolBar_;
-@synthesize webView       = webView_;
-
-@synthesize backBarButton = backBarButton_;
+@synthesize backBarButton    = backBarButton_;
 @synthesize forwardBarButton = forwardBarButton_;
-
+@synthesize loadingTitle     = loadingTitle_;
+@synthesize navigationBar    = navBar_;
 @synthesize presentedModally = presentedModally_;
+@synthesize toolBar          = toolBar_;
+@synthesize webView          = webView_;
 
 #pragma mark - Initialization/Memory management
 
@@ -50,12 +48,12 @@ static int const PKWebBrowserBarHeight = 44;
 }
 
 - (void)dealloc {
-    [loadingTitle_ release];
-    [navigationBar_ release];
-    [toolBar_ release];
-    [webView_ release];
-    [backBarButton_ release];
+    [backBarButton_    release];
     [forwardBarButton_ release];
+    [loadingTitle_     release];
+    [navigationBar_    release];
+    [toolBar_          release];
+    [webView_          release];
     [super dealloc];
 }
 
