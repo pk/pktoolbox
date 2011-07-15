@@ -9,7 +9,6 @@
 #import "PKZipUnarchiver.h"
 
 @interface PKZipUnarchiver ()
-@property (nonatomic, assign, readonly) NSUInteger  totalUncompressedSize;
 @property (nonatomic, copy, readonly)   NSString   *zipPath;
 @end
 
@@ -45,25 +44,26 @@
 - (BOOL)unzipTo:(NSString *)aDestination error:(NSError **)outError {
     ZipFile *zipFile = [[ZipFile alloc] initWithFileName:_zipPath mode:ZipFileModeUnzip];
 
-    if (![zipFile goToFirstFileInZip:&outError]) {
-        return NO;
-    }
-
     NSUInteger totalUncompressedSize = 0;
+    NSArray *zipFileInformation = [zipFile containedFiles];
     if ([self.delegate respondsToSelector:@selector(didUncompressBytes:total:)]) {
-        NSArray *zipFileInformation = [zipFile containedFiles];
         ZipFileInfo *fileInfo;
         for (fileInfo in zipFileInformation) {
             totalUncompressedSize += fileInfo.length;
+            LogDebug(@"File:%@ of size %d",fileInfo.name,fileInfo.length);
         }
     }
-
+    
+    if (![zipFile goToFirstFileInZip:outError]) {
+        return NO;
+    }
+    
     BOOL isDirectory;
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     NSString *currentFilePath;
     NSUInteger currentFileIndex = 0;
     do {
-        ZipReadStream *file = [zipFile readCurrentFileInZip:&outError];
+        ZipReadStream *file = [zipFile readCurrentFileInZip:outError];
         ZipFileInfo *fileInfo = [zipFileInformation objectAtIndex:currentFileIndex];
         isDirectory = [fileInfo.name hasSuffix:@"/"];
         currentFilePath = [aDestination stringByAppendingPathComponent:fileInfo.name];
@@ -72,7 +72,7 @@
             [fileManager createDirectoryAtPath:currentFilePath
                    withIntermediateDirectories:YES
                                     attributes:nil
-                                         error:&outError];
+                                         error:outError];
         } else {
             [fileManager createFileAtPath:currentFilePath
                                  contents:nil
@@ -80,8 +80,8 @@
 
             NSUInteger bytesRead = 0;
             NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:currentFilePath];
-            NSMutableData *buffer = [[NSMutableData alloc] initWithLength:BUFFER_SIZE];
-            while ((bytesRead = [file readDataWithBuffer:buffer error:&outError]) != 0) {
+            NSMutableData *buffer = [[NSMutableData alloc] initWithLength:PK_ZIPUNARCHIVER_BUFFER_SIZE];
+            while ((bytesRead = [file readDataWithBuffer:buffer error:outError]) != 0) {
                 [fileHandle writeData:buffer];
                 if ([self.delegate respondsToSelector:@selector(didUncompressBytes:total:)]) {
                     [self.delegate didUncompressBytes:bytesRead total:totalUncompressedSize];
@@ -90,9 +90,9 @@
             [buffer release]; buffer = nil;
             [fileHandle closeFile];
         }
-        [file finishedReadingWithError:&outError];
+        [file finishedReadingWithError:outError];
         currentFileIndex++;
-    } while([zipFile goToNextFileInZip:&outError]);
+    } while([zipFile goToNextFileInZip:outError]);
 
     [fileManager release];
     [zipFile close];

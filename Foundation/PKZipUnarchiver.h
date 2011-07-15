@@ -12,7 +12,7 @@
 #import "ZipReadStream.h"
 
 
-#ifndef
+#ifndef PK_ZIPUNARCHIVER_BUFFER_SIZE
 #define PK_ZIPUNARCHIVER_BUFFER_SIZE (1024 * 32)
 #endif
 
