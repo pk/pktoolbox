@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9321CD613D0832B00428D25 /* PKZipUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E9321CD513D0832B00428D25 /* PKZipUnarchiver.m */; };
 		E93514A4136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */; };
 		E93514A5136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */; };
 		E93514AA136ED26A001D0F1D /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E93514A8136ED26A001D0F1D /* MainWindow-iPad.xib */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9321CD413D0832B00428D25 /* PKZipUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKZipUnarchiver.h; sourceTree = "<group>"; };
+		E9321CD513D0832B00428D25 /* PKZipUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKZipUnarchiver.m; sourceTree = "<group>"; };
 		E93514A2136EC71F001D0F1D /* PKMultiButtonBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKMultiButtonBarButtonItem.h; sourceTree = "<group>"; };
 		E93514A3136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKMultiButtonBarButtonItem.m; sourceTree = "<group>"; };
 		E93514A9136ED26A001D0F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 		E96E18E0136B54980090E90A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E9321CD413D0832B00428D25 /* PKZipUnarchiver.h */,
+				E9321CD513D0832B00428D25 /* PKZipUnarchiver.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			files = (
 				E96E18FE136B54E40090E90A /* PKToolboxTests.m in Sources */,
 				E93514A4136EC71F001D0F1D /* PKMultiButtonBarButtonItem.m in Sources */,
+				E9321CD613D0832B00428D25 /* PKZipUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
