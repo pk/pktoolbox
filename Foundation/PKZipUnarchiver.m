@@ -27,6 +27,9 @@
 }
 
 - (id)initWithZipAtPath:(NSString *)aPath delegate:(id<PKZipUnarchiverDelegate>)aDelegate {
+    NSParameterAssert(aPath);
+
+    self = [super init];
     if (self != nil) {
         _zipPath = [aPath copy];
         _delegate = aDelegate;
