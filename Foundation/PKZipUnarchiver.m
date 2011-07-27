@@ -15,8 +15,8 @@
 
 @implementation PKZipUnarchiver
 
-@synthesize delegate              = _delegate;
-@synthesize zipPath               = _zipPath;
+@synthesize delegate = _delegate;
+@synthesize zipPath  = _zipPath;
 
 
 #pragma mark - Initialization/dealloc
@@ -53,11 +53,11 @@
             LogDebug(@"File:%@ of size %d",fileInfo.name,fileInfo.length);
         }
     }
-    
+
     if (![zipFile goToFirstFileInZip:outError]) {
         return NO;
     }
-    
+
     BOOL isDirectory;
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     NSString *currentFilePath;
