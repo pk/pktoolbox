@@ -5,11 +5,16 @@
 //  Created by Pavel Kunc on 29/04/2011.
 //  Copyright (C) 2011 by Pavel Kunc, http://pavelkunc.cz
 
-
 #import "PKZipUnarchiver.h"
+#import "ZipFile.h"
+#import "ZipFileInfo.h"
+#import "ZipReadStream.h"
+
 
 @interface PKZipUnarchiver ()
-@property (nonatomic, copy, readonly)   NSString   *zipPath;
+@property (nonatomic, retain, readonly) ZipFile *zipFile;
+
+- (NSArray *)zipFilesInformation;
 @end
 
 
@@ -17,12 +22,15 @@
 
 @synthesize delegate = _delegate;
 @synthesize zipPath  = _zipPath;
+@synthesize zipFile  = _zipFile;
 
 
 #pragma mark - Initialization/dealloc
 
 - (void)dealloc {
+    [_zipFile release];
     [_zipPath release];
+    [_zipFilesInformation release];
     [super dealloc];
 }
 
@@ -31,8 +39,9 @@
 
     self = [super init];
     if (self != nil) {
-        _zipPath = [aPath copy];
         _delegate = aDelegate;
+        _zipPath  = [aPath copy];
+        _zipFile  = [[ZipFile alloc] initWithFileName:_zipPath mode:ZipFileModeUnzip];
     }
     return self;
 }
@@ -45,19 +54,7 @@
 #pragma mark - Unzip methods
 
 - (BOOL)unzipTo:(NSString *)aDestination error:(NSError **)outError {
-    ZipFile *zipFile = [[ZipFile alloc] initWithFileName:_zipPath mode:ZipFileModeUnzip];
-
-    NSUInteger totalUncompressedSize = 0;
-    NSArray *zipFileInformation = [zipFile containedFiles];
-    if ([self.delegate respondsToSelector:@selector(didUncompressBytes:total:)]) {
-        ZipFileInfo *fileInfo;
-        for (fileInfo in zipFileInformation) {
-            totalUncompressedSize += fileInfo.length;
-            LogDebug(@"File:%@ of size %d",fileInfo.name,fileInfo.length);
-        }
-    }
-
-    if (![zipFile goToFirstFileInZip:outError]) {
+    if (![self.zipFile goToFirstFileInZip:outError]) {
         return NO;
     }
 
@@ -65,9 +62,10 @@
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     NSString *currentFilePath;
     NSUInteger currentFileIndex = 0;
+    NSArray *zipFilesInfo = [self zipFilesInformation];
     do {
-        ZipReadStream *file = [zipFile readCurrentFileInZip:outError];
-        ZipFileInfo *fileInfo = [zipFileInformation objectAtIndex:currentFileIndex];
+        ZipReadStream *file = [self.zipFile readCurrentFileInZip:outError];
+        ZipFileInfo *fileInfo = [zipFilesInfo objectAtIndex:currentFileIndex];
         isDirectory = [fileInfo.name hasSuffix:@"/"];
         currentFilePath = [aDestination stringByAppendingPathComponent:fileInfo.name];
 
@@ -87,7 +85,7 @@
             while ((bytesRead = [file readDataWithBuffer:buffer error:outError]) != 0) {
                 [fileHandle writeData:buffer];
                 if ([self.delegate respondsToSelector:@selector(didUncompressBytes:total:)]) {
-                    [self.delegate didUncompressBytes:bytesRead total:totalUncompressedSize];
+                    [self.delegate didUncompressBytes:bytesRead total:[self uncompressedSize]];
                 }
             }
             [buffer release]; buffer = nil;
@@ -95,13 +93,35 @@
         }
         [file finishedReadingWithError:outError];
         currentFileIndex++;
-    } while([zipFile goToNextFileInZip:outError]);
+    } while([self.zipFile goToNextFileInZip:outError]);
 
     [fileManager release];
-    [zipFile close];
-    [zipFile release];
+    [self.zipFile close];
 
     return YES;
+}
+
+- (NSUInteger)uncompressedSize {
+    if (_uncompressedSize != 0) {
+        return _uncompressedSize;
+    }
+    ZipFileInfo *fileInfo;
+    NSArray *zipFilesInfo = [self zipFilesInformation];
+    for (fileInfo in zipFilesInfo) {
+        _uncompressedSize += fileInfo.length;
+    }
+    return _uncompressedSize;
+}
+
+
+#pragma mark - Private methods
+
+- (NSArray *)zipFilesInformation {
+    if (_zipFilesInformation != nil) {
+        return _zipFilesInformation;
+    }
+    _zipFilesInformation = [[self.zipFile containedFiles] retain];
+    return _zipFilesInformation;
 }
 
 @end
