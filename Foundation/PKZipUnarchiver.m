@@ -83,12 +83,15 @@
             NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:currentFilePath];
             NSMutableData *buffer = [[NSMutableData alloc] initWithLength:PK_ZIPUNARCHIVER_BUFFER_SIZE];
             while ((bytesRead = [file readDataWithBuffer:buffer error:outError]) != 0) {
+                [buffer setLength:bytesRead];
                 [fileHandle writeData:buffer];
+                [buffer setLength:PK_ZIPUNARCHIVER_BUFFER_SIZE];
+                [buffer resetBytesInRange:NSMakeRange(0, PK_ZIPUNARCHIVER_BUFFER_SIZE)];
                 if ([self.delegate respondsToSelector:@selector(didUncompressBytes:total:)]) {
                     [self.delegate didUncompressBytes:bytesRead total:[self uncompressedSize]];
                 }
             }
-            [buffer release]; buffer = nil;
+            [buffer release];
             [fileHandle closeFile];
         }
         [file finishedReadingWithError:outError];
