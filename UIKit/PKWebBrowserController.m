@@ -62,7 +62,7 @@ static int const PKWebBrowserBarHeight = 44;
 
 - (void)loadView {
     CGRect screen = [[UIScreen mainScreen] applicationFrame];
-    self.view = [[UIView alloc] initWithFrame:screen];
+    self.view = [[[UIView alloc] initWithFrame:screen] autorelease];
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 
@@ -70,7 +70,7 @@ static int const PKWebBrowserBarHeight = 44;
                               0,
                               self.view.frame.size.width,
                               PKWebBrowserBarHeight);
-    self.navigationBar = [[UINavigationBar alloc] initWithFrame:frame];
+    self.navigationBar = [[[UINavigationBar alloc] initWithFrame:frame] autorelease];
     self.navigationBar.autoresizesSubviews = YES;
     self.navigationBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin);
 
@@ -78,7 +78,7 @@ static int const PKWebBrowserBarHeight = 44;
                        self.navigationBar.frame.size.height,
                        self.view.frame.size.width,
                        self.view.frame.size.height - self.navigationBar.frame.size.height);
-    self.webView = [[UIWebView alloc] initWithFrame:frame];
+    self.webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
     self.webView.delegate = self;
     self.webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 
