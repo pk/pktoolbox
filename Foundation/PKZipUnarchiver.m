@@ -63,6 +63,7 @@
     NSString *currentFilePath;
     NSUInteger currentFileIndex = 0;
     NSArray *zipFilesInfo = [self zipFilesInformation];
+
     do {
         ZipReadStream *file = [self.zipFile readCurrentFileInZip:outError];
         ZipFileInfo *fileInfo = [zipFilesInfo objectAtIndex:currentFileIndex];
@@ -120,10 +121,12 @@
 #pragma mark - Private methods
 
 - (NSArray *)zipFilesInformation {
-    if (_zipFilesInformation != nil) {
-        return _zipFilesInformation;
+    if (_zipFilesInformation == nil) {
+        _zipFilesInformation = [[self.zipFile containedFiles] retain];
+        [self.zipFile goToFirstFileInZip:NULL]; // Necessary because contained
+                                                // files doesn't rever pointer
+                                                // in the zip to the first file.
     }
-    _zipFilesInformation = [[self.zipFile containedFiles] retain];
     return _zipFilesInformation;
 }
 
