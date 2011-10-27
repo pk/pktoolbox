@@ -82,7 +82,7 @@
 
             NSUInteger bytesRead = 0;
             NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:currentFilePath];
-            NSMutableData *buffer = [[NSMutableData alloc] initWithCapacity:PK_ZIPUNARCHIVER_BUFFER_SIZE];
+            NSMutableData *buffer = [[NSMutableData alloc] initWithLength:PK_ZIPUNARCHIVER_BUFFER_SIZE];
             while ((bytesRead = [file readDataWithBuffer:buffer error:outError]) != 0) {
                 [buffer setLength:bytesRead];
                 [fileHandle writeData:buffer];
