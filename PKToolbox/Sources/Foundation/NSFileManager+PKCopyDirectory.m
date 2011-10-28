@@ -24,15 +24,10 @@
 
     // Outer loop is neccessary to release srcFile because enumerator somehow
     // release all after ALL iterations. So we force release using inner pool.
-    BOOL enumeratorFinished = NO;
-    while(!enumeratorFinished) {
+    while(YES) {
         @autoreleasepool {
             NSString *srcFile = [enumerator nextObject];
-            if (srcFile == nil) {
-                enumeratorFinished = YES;
-                break;
-            }
-
+            if (srcFile == nil) break;
             didCopy = YES;
 
             NSString *srcFilePath = [srcDirectoryPath stringByAppendingPathComponent:srcFile];
