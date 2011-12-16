@@ -61,6 +61,12 @@
 		E9520D701459ADFE00BFA0F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9470FE01459994500E02867 /* UIKit.framework */; };
 		E9520D721459AE7C00BFA0F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9520D711459AE7C00BFA0F7 /* libz.dylib */; };
 		E9520D731459AE9500BFA0F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9520D711459AE7C00BFA0F7 /* libz.dylib */; };
+		E96B5154149B8F6A003D0AEA /* NSDate+PKStandardFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = E96B5150149B8F6A003D0AEA /* NSDate+PKStandardFormats.h */; };
+		E96B5155149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E96B5151149B8F6A003D0AEA /* NSDate+PKStandardFormats.m */; };
+		E96B5156149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E96B5151149B8F6A003D0AEA /* NSDate+PKStandardFormats.m */; };
+		E96B5157149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = E96B5152149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h */; };
+		E96B5158149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E96B5153149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m */; };
+		E96B5159149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E96B5153149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m */; };
 		E9850D45145AB561001F7074 /* NSString+PKCopyDirectoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9850D44145AB561001F7074 /* NSString+PKCopyDirectoryTest.m */; };
 		E9850D49145AB579001F7074 /* NSFileManager+PKCopyDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = E9850D47145AB579001F7074 /* NSFileManager+PKCopyDirectory.m */; };
 		E9850D4A145AB579001F7074 /* NSFileManager+PKCopyDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = E9850D47145AB579001F7074 /* NSFileManager+PKCopyDirectory.m */; };
@@ -126,6 +132,10 @@
 		E9470FC8145997DD00E02867 /* UIDevice+PKUniqueIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+PKUniqueIdentifier.m"; sourceTree = "<group>"; };
 		E9470FE01459994500E02867 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9520D711459AE7C00BFA0F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E96B5150149B8F6A003D0AEA /* NSDate+PKStandardFormats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PKStandardFormats.h"; sourceTree = "<group>"; };
+		E96B5151149B8F6A003D0AEA /* NSDate+PKStandardFormats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PKStandardFormats.m"; sourceTree = "<group>"; };
+		E96B5152149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+PKStandardFormats.h"; sourceTree = "<group>"; };
+		E96B5153149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+PKStandardFormats.m"; sourceTree = "<group>"; };
 		E9850D44145AB561001F7074 /* NSString+PKCopyDirectoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PKCopyDirectoryTest.m"; sourceTree = "<group>"; };
 		E9850D47145AB579001F7074 /* NSFileManager+PKCopyDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+PKCopyDirectory.m"; sourceTree = "<group>"; };
 		E9850D48145AB579001F7074 /* NSFileManager+PKCopyDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+PKCopyDirectory.h"; sourceTree = "<group>"; };
@@ -303,6 +313,10 @@
 		E9470FB8145997DD00E02867 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E96B5150149B8F6A003D0AEA /* NSDate+PKStandardFormats.h */,
+				E96B5151149B8F6A003D0AEA /* NSDate+PKStandardFormats.m */,
+				E96B5152149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h */,
+				E96B5153149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m */,
 				E9850D47145AB579001F7074 /* NSFileManager+PKCopyDirectory.m */,
 				E9850D48145AB579001F7074 /* NSFileManager+PKCopyDirectory.h */,
 				E9470FB9145997DD00E02867 /* NSString+PKMD5.h */,
@@ -369,6 +383,8 @@
 				E93BAC6A14599E2A000FBC0D /* UIDevice-Hardware.h in Headers */,
 				E93BAC761459A083000FBC0D /* PKToolboxTests-Prefix.pch in Headers */,
 				E9850D4B145AB579001F7074 /* NSFileManager+PKCopyDirectory.h in Headers */,
+				E96B5154149B8F6A003D0AEA /* NSDate+PKStandardFormats.h in Headers */,
+				E96B5157149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +504,8 @@
 				E93BAC6214599D8E000FBC0D /* zip.c in Sources */,
 				E93BAC6714599DEF000FBC0D /* UIDevice-Hardware.m in Sources */,
 				E9850D49145AB579001F7074 /* NSFileManager+PKCopyDirectory.m in Sources */,
+				E96B5155149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */,
+				E96B5158149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +524,8 @@
 				E9520D6E1459AD0C00BFA0F7 /* zip.c in Sources */,
 				E9850D45145AB561001F7074 /* NSString+PKCopyDirectoryTest.m in Sources */,
 				E9850D4A145AB579001F7074 /* NSFileManager+PKCopyDirectory.m in Sources */,
+				E96B5156149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */,
+				E96B5159149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
