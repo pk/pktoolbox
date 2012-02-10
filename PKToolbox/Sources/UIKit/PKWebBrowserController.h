@@ -29,6 +29,10 @@
 
 @property (nonatomic, assign, readwrite, getter=isPresentedModally)   BOOL presentedModally;
 
+@property (nonatomic, assign, readwrite, getter=isBackButtonHidden)    BOOL backButtonHidden;
+@property (nonatomic, assign, readwrite, getter=isForwardButtonHidden) BOOL forwardButtonHidden;
+
+
 - (void)loadRequest:(NSURLRequest *)aRequest;
 - (void)loadURL:(NSURL *)aURL;
 - (void)loadURLString:(NSString *)aURL;

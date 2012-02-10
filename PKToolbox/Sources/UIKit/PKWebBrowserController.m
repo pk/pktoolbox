@@ -28,6 +28,9 @@ static int const PKWebBrowserBarHeight = 44;
 @synthesize toolBar          = toolBar_;
 @synthesize webView          = webView_;
 
+@synthesize backButtonHidden = backButtonHidden_;
+@synthesize forwardButtonHidden = forwardButtonHidden_;
+
 #pragma mark - Initialization/Memory management
 
 - (id)init {
@@ -97,29 +100,7 @@ static int const PKWebBrowserBarHeight = 44;
 }
 
 - (void)viewDidLoad {
-    UIBarButtonItem *backButton =
-        [[UIBarButtonItem alloc] initWithTitle:@"\u25C0"
-                                         style:UIBarButtonItemStylePlain
-                                        target:self
-                                        action:@selector(back)];
-    backButton.width = 20.0;
-    backButton.enabled = NO;
-    self.backBarButton = backButton;
-
-    UIBarButtonItem *forwardButton =
-        [[UIBarButtonItem alloc] initWithTitle:@"\u25B6"
-                                         style:UIBarButtonItemStylePlain
-                                        target:self
-                                        action:@selector(forward)];
-    forwardButton.width = 20.0;
-    forwardButton.enabled = NO;
-    self.forwardBarButton = forwardButton;
-
-    UIBarButtonItem *refreshButton =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                      target:self
-                                                      action:@selector(refresh)];
-    refreshButton.tag = UIBarButtonSystemItemRefresh;
+    NSMutableArray *leftItems = [[NSMutableArray alloc] init];
 
     UIBarButtonItem *spacerButton =
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -127,13 +108,44 @@ static int const PKWebBrowserBarHeight = 44;
                                                       action:nil];
     spacerButton.tag = UIBarButtonSystemItemFlexibleSpace;
 
+    if (!self.isBackButtonHidden) {
+        UIBarButtonItem *backButton =
+            [[UIBarButtonItem alloc] initWithTitle:@"\u25C0"
+                                             style:UIBarButtonItemStylePlain
+                                            target:self
+                                            action:@selector(back)];
+        backButton.width = 20.0;
+        backButton.enabled = NO;
+        self.backBarButton = backButton;
+        [leftItems addObject:backButton];
+        [backButton release];
+    }
+
+    if (!self.isForwardButtonHidden) {
+        UIBarButtonItem *forwardButton =
+            [[UIBarButtonItem alloc] initWithTitle:@"\u25B6"
+                                             style:UIBarButtonItemStylePlain
+                                            target:self
+                                            action:@selector(forward)];
+        forwardButton.width = 20.0;
+        forwardButton.enabled = NO;
+        self.forwardBarButton = forwardButton;
+        [leftItems addObject:forwardButton];
+        [forwardButton release];
+    }
+
+    UIBarButtonItem *refreshButton =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                      target:self
+                                                      action:@selector(refresh)];
+    refreshButton.tag = UIBarButtonSystemItemRefresh;
+    [leftItems addObject:refreshButton];
+    [refreshButton release];
+
     PKNavigationItem *item = [[PKNavigationItem alloc] initWithTitle:self.title];
-    [item setLeftButtons:spacerButton,
-                         backButton,
-                         forwardButton,
-                         spacerButton,
-                         refreshButton,
-                         spacerButton, nil];
+    [item setLeftButtonsWithArray:leftItems];
+    [spacerButton release];
+    [leftItems release];
 
     if (self.presentedModally) {
         UIBarButtonItem *closeButton =
@@ -146,10 +158,6 @@ static int const PKWebBrowserBarHeight = 44;
     }
 
     [self.navigationBar setItems:[NSArray arrayWithObject:item] animated:NO];
-    [spacerButton release];
-    [backButton release];
-    [forwardButton release];
-    [refreshButton release];
     [item release];
 }
 
