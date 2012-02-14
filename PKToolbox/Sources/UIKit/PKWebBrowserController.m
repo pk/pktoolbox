@@ -30,6 +30,7 @@ static int const PKWebBrowserBarHeight = 44;
 
 @synthesize backButtonHidden = backButtonHidden_;
 @synthesize forwardButtonHidden = forwardButtonHidden_;
+@synthesize refreshButtonHidden = refreshButtonHidden_;
 
 #pragma mark - Initialization/Memory management
 
@@ -134,13 +135,15 @@ static int const PKWebBrowserBarHeight = 44;
         [forwardButton release];
     }
 
-    UIBarButtonItem *refreshButton =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                      target:self
-                                                      action:@selector(refresh)];
-    refreshButton.tag = UIBarButtonSystemItemRefresh;
-    [leftItems addObject:refreshButton];
-    [refreshButton release];
+    if (!self.isRefreshButtonHidden) {
+        UIBarButtonItem *refreshButton =
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                          target:self
+                                                          action:@selector(refresh)];
+        refreshButton.tag = UIBarButtonSystemItemRefresh;
+        [leftItems addObject:refreshButton];
+        [refreshButton release];
+    }
 
     PKNavigationItem *item = [[PKNavigationItem alloc] initWithTitle:self.title];
     [item setLeftButtonsWithArray:leftItems];

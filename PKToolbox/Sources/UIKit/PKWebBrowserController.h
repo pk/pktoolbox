@@ -31,6 +31,7 @@
 
 @property (nonatomic, assign, readwrite, getter=isBackButtonHidden)    BOOL backButtonHidden;
 @property (nonatomic, assign, readwrite, getter=isForwardButtonHidden) BOOL forwardButtonHidden;
+@property (nonatomic, assign, readwrite, getter=isRefreshButtonHidden) BOOL refreshButtonHidden;
 
 
 - (void)loadRequest:(NSURLRequest *)aRequest;
