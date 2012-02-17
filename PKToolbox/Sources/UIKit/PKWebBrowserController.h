@@ -8,31 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@class PKWebBrowserController;
 
-@interface PKWebBrowserController : UIViewController <UIWebViewDelegate> {
-@private
-    NSString        *loadingTitle_;
-    UINavigationBar *navigationBar_;
-    UIToolbar       *toolBar_;
-    UIWebView       *webView_;
+@protocol PKWebBrowserControllerDelegate <NSObject>
+- (void)needDismissWebBrowser:(PKWebBrowserController *)aWebBrowser;
+@end
 
-    UIBarButtonItem *forwardBarButton_;
-    UIBarButtonItem *backBarButton_;
 
-    BOOL presentedModally_;
-}
+@interface PKWebBrowserController : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic, retain, readwrite) UINavigationBar *navigationBar;
 @property (nonatomic, retain, readwrite) UIToolbar       *toolBar;
 @property (nonatomic, retain, readwrite) UIWebView       *webView;
 @property (nonatomic, copy, readwrite)   NSString        *loadingTitle;
+@property (nonatomic, assign, readwrite) id<PKWebBrowserControllerDelegate> delegate;
 
-@property (nonatomic, assign, readwrite, getter=isPresentedModally)   BOOL presentedModally;
-
+@property (nonatomic, assign, readwrite, getter=isPresentedModally)    BOOL presentedModally;
 @property (nonatomic, assign, readwrite, getter=isBackButtonHidden)    BOOL backButtonHidden;
 @property (nonatomic, assign, readwrite, getter=isForwardButtonHidden) BOOL forwardButtonHidden;
 @property (nonatomic, assign, readwrite, getter=isRefreshButtonHidden) BOOL refreshButtonHidden;
-
 
 - (void)loadRequest:(NSURLRequest *)aRequest;
 - (void)loadURL:(NSURL *)aURL;

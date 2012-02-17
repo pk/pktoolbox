@@ -23,10 +23,11 @@ static int const PKWebBrowserBarHeight = 44;
 @synthesize backBarButton    = backBarButton_;
 @synthesize forwardBarButton = forwardBarButton_;
 @synthesize loadingTitle     = loadingTitle_;
-@synthesize navigationBar    = navBar_;
+@synthesize navigationBar    = navigationBar_;
 @synthesize presentedModally = presentedModally_;
 @synthesize toolBar          = toolBar_;
 @synthesize webView          = webView_;
+@synthesize delegate         = delegate_;
 
 @synthesize backButtonHidden = backButtonHidden_;
 @synthesize forwardButtonHidden = forwardButtonHidden_;
@@ -48,15 +49,17 @@ static int const PKWebBrowserBarHeight = 44;
 }
 
 - (void)dealloc {
+    self.delegate = nil;
+
     [backBarButton_    release];
     [forwardBarButton_ release];
     [loadingTitle_     release];
     [navigationBar_    release];
     [toolBar_          release];
-    
+
     self.webView.delegate = nil;
-    [webView_          release];
-    
+    [webView_ release];
+
     [super dealloc];
 }
 
@@ -163,7 +166,7 @@ static int const PKWebBrowserBarHeight = 44;
     self.toolBar = nil;
     self.backBarButton = nil;
     self.forwardBarButton = nil;
-    
+
     self.webView.delegate = nil;
     self.webView = nil;
 }
@@ -216,7 +219,15 @@ static int const PKWebBrowserBarHeight = 44;
 
 - (IBAction)close {
     [self.webView stopLoading];
-    [self dismissModalViewControllerAnimated:YES];
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(needDismissWebBrowser:)]) {
+        [self.delegate needDismissWebBrowser:self];
+        return;
+    }
+
+    if (self.presentedModally) {
+        [self dismissModalViewControllerAnimated:YES];
+    }
 }
 
 
