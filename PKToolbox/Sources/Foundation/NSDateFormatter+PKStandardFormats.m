@@ -7,10 +7,10 @@
 
 #import "NSDateFormatter+PKStandardFormats.h"
 
-static NSString const *rfc1123Format = @"EEE',' dd MMM yyyy HH':'mm':'ss z";
-static NSString const *rfc850Format = @"EEEE',' dd'-'MMM'-'yy HH':'mm':'ss z";
-static NSString const *ansicFormat = @"EEE MMM d HH':'mm':'ss yyyy";
-static NSString const *iso8601Format = @"yyyy-MM-dd'T'hh:mm:ss'Z'";
+NSString const *rfc1123Format = @"EEE',' dd MMM yyyy HH':'mm':'ss z";
+NSString const *rfc850Format = @"EEEE',' dd'-'MMM'-'yy HH':'mm':'ss z";
+NSString const *ansicFormat = @"EEE MMM d HH':'mm':'ss yyyy";
+NSString const *iso8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 
 
 @implementation NSDateFormatter (PKStandardFormats)
@@ -18,7 +18,7 @@ static NSString const *iso8601Format = @"yyyy-MM-dd'T'hh:mm:ss'Z'";
 + (NSDateFormatter *)iso8601DateFormatter {
     NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
     df.timeStyle = NSDateFormatterFullStyle;
-    df.dateFormat = @"yyyy-MM-dd'T'hh:mm:ss'Z'";
+    df.dateFormat = iso8601Format;
     return df;
 }
 

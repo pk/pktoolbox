@@ -61,7 +61,7 @@
 		E9520D701459ADFE00BFA0F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9470FE01459994500E02867 /* UIKit.framework */; };
 		E9520D721459AE7C00BFA0F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9520D711459AE7C00BFA0F7 /* libz.dylib */; };
 		E9520D731459AE9500BFA0F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9520D711459AE7C00BFA0F7 /* libz.dylib */; };
-		E96B5154149B8F6A003D0AEA /* NSDate+PKStandardFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = E96B5150149B8F6A003D0AEA /* NSDate+PKStandardFormats.h */; };
+		E96B5154149B8F6A003D0AEA /* NSDate+PKStandardFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = E96B5150149B8F6A003D0AEA /* NSDate+PKStandardFormats.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E96B5155149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E96B5151149B8F6A003D0AEA /* NSDate+PKStandardFormats.m */; };
 		E96B5156149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E96B5151149B8F6A003D0AEA /* NSDate+PKStandardFormats.m */; };
 		E96B5157149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = E96B5152149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h */; };
@@ -597,8 +597,10 @@
 				DSTROOT = /tmp/PKToolbox.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PKToolbox/PKToolbox-Prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = PKToolbox;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -609,8 +611,10 @@
 				DSTROOT = /tmp/PKToolbox.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PKToolbox/PKToolbox-Prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = PKToolbox;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

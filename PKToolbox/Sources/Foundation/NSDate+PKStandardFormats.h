@@ -15,6 +15,8 @@
 
 - (NSString *)iso8601String;
 
++ (NSDate *)dateFromISO8601:(NSString *)aDate;
+
 /**
  * Convert a 'Full-Date' string
  * (http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1)

@@ -25,7 +25,7 @@
 - (NSString *)rfc2616String {
     static NSDateFormatter *df = nil;
     if(df == nil) {
-        df = [NSDateFormatter rfc2616DateFormatterWithFormat:rfc1123Format];
+        df = [NSDateFormatter rfc2616DateFormatterWithFormat:(NSString *)rfc1123Format];
     }
     return [df stringFromDate:self];
 }
@@ -54,7 +54,7 @@
     if(aDate == nil) return nil;
     static NSDateFormatter *df = nil;
     if(df == nil) {
-        df = [NSDateFormatter rfc2616DateFormatterWithFormat:rfc1123Format];
+        df = [NSDateFormatter rfc2616DateFormatterWithFormat:(NSString *)rfc1123Format];
     }
     return [df dateFromString:aDate];
 }
@@ -63,7 +63,7 @@
     if(aDate == nil) return nil;
     static NSDateFormatter *df = nil;
     if(df == nil) {
-        df = [NSDateFormatter rfc2616DateFormatterWithFormat:rfc850Format];
+        df = [NSDateFormatter rfc2616DateFormatterWithFormat:(NSString *)rfc850Format];
     }
     return [df dateFromString:aDate];
 }
@@ -72,7 +72,7 @@
     if(aDate == nil) return nil;
     static NSDateFormatter *df = nil;
     if(df == nil) {
-        df = [NSDateFormatter rfc2616DateFormatterWithFormat:ansicFormat];
+        df = [NSDateFormatter rfc2616DateFormatterWithFormat:(NSString *)ansicFormat];
     }
     return [df dateFromString:aDate];
 }
