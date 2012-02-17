@@ -18,7 +18,7 @@ NSString const *iso8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 + (NSDateFormatter *)iso8601DateFormatter {
     NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
     df.timeStyle = NSDateFormatterFullStyle;
-    df.dateFormat = iso8601Format;
+    df.dateFormat = (NSString *)iso8601Format;
     return df;
 }
 
