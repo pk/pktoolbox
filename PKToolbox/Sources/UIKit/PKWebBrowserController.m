@@ -53,7 +53,10 @@ static int const PKWebBrowserBarHeight = 44;
     [loadingTitle_     release];
     [navigationBar_    release];
     [toolBar_          release];
+    
+    self.webView.delegate = nil;
     [webView_          release];
+    
     [super dealloc];
 }
 
@@ -85,16 +88,6 @@ static int const PKWebBrowserBarHeight = 44;
     self.webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
     self.webView.delegate = self;
     self.webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-
-    /*
-    frame = CGRectMake(0,
-                       self.navigationBar.frame.size.height + self.webView.frame.size.height,
-                       self.view.frame.size.width,
-                       PKWebBrowserBarHeight);
-    self.toolBar = [[UIToolbar alloc] initWithFrame:frame];
-    self.toolBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
-    [self.view addSubview:self.toolBar];
-    */
 
     [self.view addSubview:self.navigationBar];
     [self.view addSubview:self.webView];
@@ -168,9 +161,11 @@ static int const PKWebBrowserBarHeight = 44;
     [super viewDidUnload];
     self.navigationBar = nil;
     self.toolBar = nil;
-    self.webView = nil;
     self.backBarButton = nil;
     self.forwardBarButton = nil;
+    
+    self.webView.delegate = nil;
+    self.webView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
