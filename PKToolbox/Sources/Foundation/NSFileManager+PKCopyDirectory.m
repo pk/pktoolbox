@@ -37,7 +37,6 @@
             NSDictionary *dstFileAtributes = [fm attributesOfItemAtPath:dstFilePath
                                                                   error:outError];
             BOOL srcFileIsDirectory = ([srcFileAtributes fileType] == NSFileTypeDirectory);
-            BOOL dstFileIsDirectory = ([dstFileAtributes fileType] == NSFileTypeDirectory);
             BOOL dstFileExists = (dstFileAtributes != nil);
 
             ////////////////////////
