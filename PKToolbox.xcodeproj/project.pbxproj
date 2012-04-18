@@ -47,7 +47,7 @@
 		E9470FD8145997DD00E02867 /* PKTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9470FC4145997DD00E02867 /* PKTextFieldTableViewCell.m */; };
 		E9470FDA145997DD00E02867 /* PKWebBrowserController.h in Headers */ = {isa = PBXBuildFile; fileRef = E9470FC5145997DD00E02867 /* PKWebBrowserController.h */; };
 		E9470FDB145997DD00E02867 /* PKWebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9470FC6145997DD00E02867 /* PKWebBrowserController.m */; };
-		E9470FDD145997DD00E02867 /* UIDevice+PKUniqueIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = E9470FC7145997DD00E02867 /* UIDevice+PKUniqueIdentifier.h */; };
+		E9470FDD145997DD00E02867 /* UIDevice+PKUniqueIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = E9470FC7145997DD00E02867 /* UIDevice+PKUniqueIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9470FDE145997DD00E02867 /* UIDevice+PKUniqueIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E9470FC8145997DD00E02867 /* UIDevice+PKUniqueIdentifier.m */; };
 		E9470FE11459994500E02867 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9470FE01459994500E02867 /* UIKit.framework */; };
 		E9520D5E1459AC9700BFA0F7 /* NSString+PKMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = E9470FBA145997DD00E02867 /* NSString+PKMD5.m */; };
@@ -364,12 +364,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9470FC9145997DD00E02867 /* NSString+PKMD5.h in Headers */,
+				E9470FDD145997DD00E02867 /* UIDevice+PKUniqueIdentifier.h in Headers */,
 				E9470FCC145997DD00E02867 /* PKZipUnarchiver.h in Headers */,
 				E9470FD1145997DD00E02867 /* PKMultiButtonBarButtonItem.h in Headers */,
 				E9470FD4145997DD00E02867 /* PKNavigationItem.h in Headers */,
 				E9470FD7145997DD00E02867 /* PKTextFieldTableViewCell.h in Headers */,
 				E9470FDA145997DD00E02867 /* PKWebBrowserController.h in Headers */,
-				E9470FDD145997DD00E02867 /* UIDevice+PKUniqueIdentifier.h in Headers */,
 				E93BAC4B14599D8E000FBC0D /* ZipFile.h in Headers */,
 				E93BAC4E14599D8E000FBC0D /* ZipWriteStream.h in Headers */,
 				E93BAC5114599D8E000FBC0D /* ZipFileInfo.h in Headers */,
