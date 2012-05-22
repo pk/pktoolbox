@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E936937F156A72F50042A072 /* NSString+PKUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = E936937D156A72F50042A072 /* NSString+PKUUID.h */; };
+		E9369380156A72F50042A072 /* NSString+PKUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = E936937E156A72F50042A072 /* NSString+PKUUID.m */; };
 		E93BAC4B14599D8E000FBC0D /* ZipFile.h in Headers */ = {isa = PBXBuildFile; fileRef = E93BAC3914599D8E000FBC0D /* ZipFile.h */; };
 		E93BAC4C14599D8E000FBC0D /* ZipFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E93BAC3A14599D8E000FBC0D /* ZipFile.m */; };
 		E93BAC4E14599D8E000FBC0D /* ZipWriteStream.h in Headers */ = {isa = PBXBuildFile; fileRef = E93BAC3B14599D8E000FBC0D /* ZipWriteStream.h */; };
@@ -85,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E936937D156A72F50042A072 /* NSString+PKUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PKUUID.h"; sourceTree = "<group>"; };
+		E936937E156A72F50042A072 /* NSString+PKUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PKUUID.m"; sourceTree = "<group>"; };
 		E93BAC3914599D8E000FBC0D /* ZipFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipFile.h; path = "Objective-Zip/ZipFile.h"; sourceTree = "<group>"; };
 		E93BAC3A14599D8E000FBC0D /* ZipFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipFile.m; path = "Objective-Zip/ZipFile.m"; sourceTree = "<group>"; };
 		E93BAC3B14599D8E000FBC0D /* ZipWriteStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipWriteStream.h; path = "Objective-Zip/ZipWriteStream.h"; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				E9470FBA145997DD00E02867 /* NSString+PKMD5.m */,
 				E9470FBB145997DD00E02867 /* PKZipUnarchiver.h */,
 				E9470FBC145997DD00E02867 /* PKZipUnarchiver.m */,
+				E936937D156A72F50042A072 /* NSString+PKUUID.h */,
+				E936937E156A72F50042A072 /* NSString+PKUUID.m */,
 			);
 			name = Foundation;
 			path = Sources/Foundation;
@@ -385,6 +391,7 @@
 				E9850D4B145AB579001F7074 /* NSFileManager+PKCopyDirectory.h in Headers */,
 				E96B5154149B8F6A003D0AEA /* NSDate+PKStandardFormats.h in Headers */,
 				E96B5157149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.h in Headers */,
+				E936937F156A72F50042A072 /* NSString+PKUUID.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +513,7 @@
 				E9850D49145AB579001F7074 /* NSFileManager+PKCopyDirectory.m in Sources */,
 				E96B5155149B8F6A003D0AEA /* NSDate+PKStandardFormats.m in Sources */,
 				E96B5158149B8F6A003D0AEA /* NSDateFormatter+PKStandardFormats.m in Sources */,
+				E9369380156A72F50042A072 /* NSString+PKUUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
