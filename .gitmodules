@@ -1,6 +1,0 @@
-[submodule "Dependencies/uidevice-extension"]
-	path = Dependencies/uidevice-extension
-	url = https://github.com/erica/uidevice-extension.git
-[submodule "Dependencies/Objective-Zip"]
-	path = Dependencies/Objective-Zip
-	url = git@github.com:pk/Objective-Zip.git
