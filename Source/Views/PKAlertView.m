@@ -8,6 +8,10 @@
 
 #import "PKAlertView.h"
 
+#ifndef PK_ALERTVIEW_SYSTEM_ERROR_TAG
+#define PK_ALERTVIEW_SYSTEM_ERROR_TAG = 0
+#endif
+
 @implementation PKAlertView
 
 - (void)dealloc {
@@ -24,7 +28,7 @@
                                                    delegate:aDelegate
                                           cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                           otherButtonTitles:nil];
-    [alert setTag:PKAlertViewTagSystemError];
+    [alert setTag:PK_ALERTVIEW_SYSTEM_ERROR_TAG];
     return alert;
 }
 

@@ -40,7 +40,7 @@
 - (id)initWithDomain:(NSString *)aDomain
                 code:(NSInteger)aCode
             userInfo:(NSDictionary *)aDictionary {
-    return [super initWithDomain:PROJECT_ERROR_DOMAIN code:aCode userInfo:aDictionary];
+    return [super initWithDomain:PK_ERROR_PROJECT_DOMAIN code:aCode userInfo:aDictionary];
 }
 
 @end
