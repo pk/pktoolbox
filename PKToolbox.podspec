@@ -10,9 +10,10 @@ Pod::Spec.new do |s|
   s.summary      = "Pavel's utilities for iOS."
   s.description  = <<-DESC
                    DESC
+  s.license       = 'MIT'
   s.homepage      = "http://pavelkunc.cz/PKToolbox"
   s.author        = { "Pavel Kunc" => "pavel.kunc@gmail.com" }
-  s.source        = { :git => "https://github.com/pk/pktoolbox.git", :tag => "2.0.0" }
+  s.source        = { :git => "https://github.com/pk/pktoolbox.git", :tag => "v#{s.version}" }
   s.platform      = :ios, '6.0'
   s.source_files  = 'Source', 'Source/**/*.{h,m}'
   s.exclude_files = 'Source/Exclude'
