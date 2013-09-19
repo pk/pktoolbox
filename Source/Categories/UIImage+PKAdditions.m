@@ -17,7 +17,7 @@ static NSString * const kWideScreenFilenameSuffix = @"-568h";
 + (UIImage *)pk_imageNamed:(NSString *)aName {
     NSParameterAssert(aName);
 
-    if (!IS_IPHONE_5) return [self imageNamed:aName];
+    if (!PK_IS_IPHONE_5) return [self imageNamed:aName];
 
     NSString *name;
     NSString *extension = [aName pathExtension];

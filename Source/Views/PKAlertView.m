@@ -8,10 +8,6 @@
 
 #import "PKAlertView.h"
 
-#ifndef PK_ALERTVIEW_SYSTEM_ERROR_TAG
-#define PK_ALERTVIEW_SYSTEM_ERROR_TAG = 0
-#endif
-
 @implementation PKAlertView
 
 - (void)dealloc {

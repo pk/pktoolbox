@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #ifndef PK_ERROR_PROJECT_DOMAIN
-#define PK_ERROR_PROJECT_DOMAIN = @"PKErrorDomain"
+#define PK_ERROR_PROJECT_DOMAIN @"PKErrorDomain"
 #endif
 
 @interface PKError : NSError
