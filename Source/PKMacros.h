@@ -15,3 +15,5 @@
 #define PK_IS_IPHONE ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone )
 #define PK_IS_IPHONE_5 ( PK_IS_IPHONE && PK_IS_WIDESCREEN )
 
+#define PK_IS_IOS7 ( floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1 )
+
