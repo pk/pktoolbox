@@ -14,7 +14,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-+ (PKAlertView *)alertWithSystemError:(NSError *)aError delegate:(id)aDelegate {
++ (instancetype)alertWithSystemError:(NSError *)aError delegate:(id)aDelegate {
     NSString *title = NSLocalizedString(@"alert-system-error-title",nil);
     NSString *messageFormat = NSLocalizedString(@"alert-system-error-message-format", nil);
     NSString *message = [NSString stringWithFormat:messageFormat,
@@ -44,7 +44,7 @@
 
 #pragma mark - Notification handling
 
-- (void)applicationDidEnterBackground:(NSNotification*) notification {
+- (void)applicationDidEnterBackground:(NSNotification *)notification {
     [self dismissWithClickedButtonIndex:[self cancelButtonIndex] animated:NO];
 }
 

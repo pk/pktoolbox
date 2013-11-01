@@ -14,7 +14,7 @@
 
 @interface PKAlertView : UIAlertView
 
-+ (PKAlertView *)alertWithSystemError:(NSError *)error delegate:(id)delegate;
++ (instancetype)alertWithSystemError:(NSError *)error delegate:(id)delegate;
 
 @end
 

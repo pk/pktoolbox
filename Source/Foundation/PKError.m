@@ -10,11 +10,11 @@
 
 @implementation PKError
 
-+ (id)errorWithCode:(NSInteger)aCode {
++ (instancetype)errorWithCode:(NSInteger)aCode {
     return [self errorWithCode:aCode description:nil];
 }
 
-+ (id)errorWithCode:(NSInteger)aCode format:(NSString *)aFormatString, ... {
++ (instancetype)errorWithCode:(NSInteger)aCode format:(NSString *)aFormatString, ... {
     va_list args;
     va_start(args, aFormatString);
     NSString *description = [[NSString alloc] initWithFormat:aFormatString arguments:args];
@@ -23,7 +23,7 @@
     return [self errorWithCode:aCode description:description];
 }
 
-+ (id)errorWithCode:(NSInteger)aCode description:(NSString *)aDescription {
++ (instancetype)errorWithCode:(NSInteger)aCode description:(NSString *)aDescription {
     NSDictionary *userInfo = nil;
     if (aDescription != nil) {
         userInfo = [NSDictionary dictionaryWithObjectsAndKeys:aDescription,
@@ -33,13 +33,13 @@
     return [self errorWithCode:aCode userInfo:userInfo];
 }
 
-+ (id)errorWithCode:(NSInteger)aCode userInfo:(NSDictionary *)aDictionary {
++ (instancetype)errorWithCode:(NSInteger)aCode userInfo:(NSDictionary *)aDictionary {
     return [super errorWithDomain:nil code:aCode userInfo:aDictionary];
 }
 
-- (id)initWithDomain:(NSString *)aDomain
-                code:(NSInteger)aCode
-            userInfo:(NSDictionary *)aDictionary {
+- (instancetype)initWithDomain:(NSString *)aDomain
+                          code:(NSInteger)aCode
+                      userInfo:(NSDictionary *)aDictionary {
     return [super initWithDomain:PK_ERROR_PROJECT_DOMAIN code:aCode userInfo:aDictionary];
 }
 

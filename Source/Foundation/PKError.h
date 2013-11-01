@@ -14,10 +14,10 @@
 
 @interface PKError : NSError
 
-+ (id)errorWithCode:(NSInteger)code;
-+ (id)errorWithCode:(NSInteger)code format:(NSString *)format, ...;
-+ (id)errorWithCode:(NSInteger)code description:(NSString *)description;
-+ (id)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict;
++ (instancetype)errorWithCode:(NSInteger)code;
++ (instancetype)errorWithCode:(NSInteger)code format:(NSString *)format, ...;
++ (instancetype)errorWithCode:(NSInteger)code description:(NSString *)description;
++ (instancetype)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict;
 
 @end
 
