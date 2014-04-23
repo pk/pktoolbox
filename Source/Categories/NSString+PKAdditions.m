@@ -14,7 +14,9 @@ static NSString * const kEntityEnd = @";";
 
 @implementation NSString (PKAdditions)
 
-- (id)pk_stringByReplacingNumericHTMLEntities {
+//TODO: This only handles decimal HTML entity codes but not hexa &#xDDDD;
+//      (pavel, Mon  4 Nov 20:39:27 2013)
+- (instancetype)pk_stringByReplacingNumericHTMLEntities {
     NSString *string = [self copy];
 
     NSRange entityEnd;
@@ -36,4 +38,14 @@ static NSString * const kEntityEnd = @";";
     return string;
 }
 
+- (instancetype)pk_SHA1_Base64 {
+    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
+    NSData *stringBytes = [self dataUsingEncoding:NSUTF8StringEncoding];
+    if (CC_SHA1([stringBytes bytes], [stringBytes length], digest) != digest) return nil;
+
+    NSData *sha = [NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
+    return [sha base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+}
+
 @end
+
