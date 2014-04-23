@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pavel Kunc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #ifndef PK_ERROR_PROJECT_DOMAIN
 #define PK_ERROR_PROJECT_DOMAIN @"PKErrorDomain"
