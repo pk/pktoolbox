@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pavel Kunc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface UIColor (PKAdditions)
 
-+ (id)pk_colorWithHexRGBA:(NSUInteger)color;
++ (instancetype)pk_colorWithHexRGBA:(NSUInteger)color;
 
 @end

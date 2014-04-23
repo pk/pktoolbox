@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Pavel Kunc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface UIImage (PKAdditions)
 
-+ (UIImage *)pk_imageNamed:(NSString *)name;
++ (instancetype)pk_imageNamed:(NSString *)name;
 @end

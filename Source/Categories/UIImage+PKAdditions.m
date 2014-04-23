@@ -14,7 +14,7 @@ static NSString * const kWideScreenFilenameSuffix = @"-568h";
 @implementation UIImage (PKAdditions)
 
 // TODO: This doesn't handle non -568h files so it can't be used all the time
-+ (UIImage *)pk_imageNamed:(NSString *)aName {
++ (instancetype)pk_imageNamed:(NSString *)aName {
     NSParameterAssert(aName);
 
     if (!PK_IS_IPHONE_5) return [self imageNamed:aName];

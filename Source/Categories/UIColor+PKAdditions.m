@@ -10,7 +10,7 @@
 
 @implementation UIColor (PKAdditions)
 
-+ (id)pk_colorWithHexRGBA:(NSUInteger)aColor {
++ (instancetype)pk_colorWithHexRGBA:(NSUInteger)aColor {
     return [UIColor colorWithRed:((aColor >> 24) & 0xFF) / 255.0
                            green:((aColor >> 16) & 0xFF) / 255.0
                             blue:((aColor >> 8) & 0xFF) / 255.0
