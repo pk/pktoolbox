@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Pavel Kunc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 #ifndef PK_ALERTVIEW_SYSTEM_ERROR_TAG
 #define PK_ALERTVIEW_SYSTEM_ERROR_TAG -1000

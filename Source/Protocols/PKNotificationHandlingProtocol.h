@@ -6,14 +6,12 @@
 //  Copyright (c) 2012 Pavel Kunc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @protocol PKNotificationHandlingProtocol <NSObject>
 
-- (void)_registerNotificationObservers;
-- (void)_removeNotificationObservers;
-- (void)_handleNotification:(NSNotification *)notification;
-- (void)_handleNotificationOnMainThread:(NSNotification *)notification;
++ (NSSet *)pk_observedNotifications;
+- (void)pk_handleNotificationOnMainThread:(NSNotification *)notification;
 
 @end
 
