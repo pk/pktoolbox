@@ -40,7 +40,11 @@
 - (instancetype)initWithDomain:(NSString *)aDomain
                           code:(NSInteger)aCode
                       userInfo:(NSDictionary *)aDictionary {
-    return [super initWithDomain:PK_ERROR_PROJECT_DOMAIN code:aCode userInfo:aDictionary];
+    return [super initWithDomain:[[self class] domain] code:aCode userInfo:aDictionary];
+}
+
++ (NSString *)domain {
+    return @"com.override.this.domain";
 }
 
 @end
