@@ -27,8 +27,9 @@ xcuserdata
 profile
 *.moved-aside
 
-# Nexxar specific
-Data/Reports/*
-
 # Tags
 tags
+
+# Ignore Gemfile, Podfile and Pods dir
+*.lock
+Pods
