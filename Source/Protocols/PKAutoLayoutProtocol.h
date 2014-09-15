@@ -10,7 +10,7 @@
 
 @protocol PKAutoLayoutProtocol <NSObject>
 
-- (void)_setupAutoLayoutConstraints;
+- (void)pk_setupAutoLayoutConstraints;
 
 @end
 

@@ -10,14 +10,14 @@
 
 @protocol PKKeyValueObservingProtocol <NSObject>
 
-- (void)_registerKeyValueObservers;
+- (void)pk_registerKeyValueObservers;
 
-- (void)_removeKeyValueObservers;
+- (void)pk_removeKeyValueObservers;
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context;
+- (void)pk_observeValueForKeyPath:(NSString *)keyPath
+                         ofObject:(id)object
+                           change:(NSDictionary *)change
+                          context:(void *)context;
 
 @end
 
