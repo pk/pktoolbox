@@ -41,7 +41,7 @@ static NSString * const kEntityEnd = @";";
 - (instancetype)pk_SHA1_Base64 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
     NSData *stringBytes = [self dataUsingEncoding:NSUTF8StringEncoding];
-    if (CC_SHA1([stringBytes bytes], [stringBytes length], digest) != digest) return nil;
+    if (CC_SHA1([stringBytes bytes], (uint)[stringBytes length], digest) != digest) return nil;
 
     NSData *sha = [NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
     return [sha base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
