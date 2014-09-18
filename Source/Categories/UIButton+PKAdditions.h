@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Pavel Kunc. All rights reserved.
 //
 
-@import Foundation;
+@import UIKit.UIButton;
 
 @interface UIButton (PKAdditions)
 

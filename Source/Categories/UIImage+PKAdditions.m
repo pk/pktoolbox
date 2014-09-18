@@ -7,7 +7,6 @@
 //
 
 #import "UIImage+PKAdditions.h"
-#import "PKMacros.h"
 
 static NSString * const kWideScreenFilenameSuffix = @"-568h";
 

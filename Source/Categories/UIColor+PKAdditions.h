@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pavel Kunc. All rights reserved.
 //
 
-@import UIKit;
+@import UIKit.UIColor;
 
 @interface UIColor (PKAdditions)
 

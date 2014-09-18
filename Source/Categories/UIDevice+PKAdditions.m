@@ -7,11 +7,6 @@
 //
 
 #import "UIDevice+PKAdditions.h"
-#import "NSString+PKAdditions.h"
-
-#import <ifaddrs.h>
-#import <arpa/inet.h>
-
 
 @implementation UIDevice (PKAdditions)
 

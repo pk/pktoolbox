@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 PKToolBox. All rights reserved.
 //
 
+@import UIKit.UIDevice;
+@import UIKit.UIScreen;
+
 #pragma mark - Foundation
 
 #define PK_NIL_IF_NULL(obj) ((obj == (id)[NSNull null]) ? nil : obj)

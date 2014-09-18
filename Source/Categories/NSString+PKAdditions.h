@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Pavel Kunc. All rights reserved.
 //
 
-@import Foundation;
+@import Foundation.NSString;
+@import Foundation.NSData;
 #import <CommonCrypto/CommonDigest.h>
 
 @interface NSString (PKAdditions)

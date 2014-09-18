@@ -6,7 +6,13 @@
 //  Copyright (c) 2012 Fry-it, Limited. All rights reserved.
 //
 
-@import Foundation;
+@import Foundation.NSString;
+@import Foundation.NSArray;
+@import Foundation.NSError;
+@import Foundation.NSException;
+@import Foundation.NSFileManager;
+@import Foundation.NSKeyedArchiver;
+@import Foundation.NSKeyValueCoding;
 
 // Error domain
 extern NSString * const PKPersistentStackErrorDomain;

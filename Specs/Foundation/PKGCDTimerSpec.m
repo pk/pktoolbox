@@ -7,7 +7,7 @@
 
 #define EXP_SHORTHAND
 #import "Expecta.h"
-#import "Specta.h"
+#import <Specta/Specta.h>
 #import "PKGCDTimer.h"
 
 SpecBegin(PKGCDTimerSpecs)

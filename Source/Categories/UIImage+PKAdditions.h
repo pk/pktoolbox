@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Pavel Kunc. All rights reserved.
 //
 
-@import UIKit;
+@import UIKit.UIImage;
+#import "PKMacros.h"
 
 @interface UIImage (PKAdditions)
 
