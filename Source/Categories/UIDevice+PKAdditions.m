@@ -39,6 +39,9 @@
     return [identifier pk_SHA1_Base64];
 }
 
+
+#pragma mark - IP address
+
 - (NSString *)pk_ipAddress {
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
@@ -73,28 +76,28 @@
     return addr ? addr : @"0.0.0.0";
 }
 
+
+#pragma mark - Disk space
+
 - (unsigned long long)pk_availableDiskSpace {
-    unsigned long long totalSpace = 0;
     unsigned long long totalFreeSpace = 0;
 
     NSError * __autoreleasing error = nil;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *paths =
+        NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSDictionary *dictionary =
         [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject]
                                                                 error:&error];
     if (dictionary) {
-        totalSpace = [dictionary[NSFileSystemSize] unsignedLongLongValue];
         totalFreeSpace = [dictionary[NSFileSystemFreeSize] unsignedLongLongValue];
-        NSLog(@"Memory Capacity of %llu MiB with %llu MiB Free memory available.",
-              ((totalSpace/1024ll)/1024ll),
-              ((totalFreeSpace/1024ll)/1024ll));
     } else {
-        NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %d",
+        NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %ld",
               [error domain],
-              [error code]);
+              (long)[error code]);
     }
 
     return totalFreeSpace;
 }
 
 @end
+
