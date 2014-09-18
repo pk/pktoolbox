@@ -10,9 +10,13 @@
 
 @protocol PKKeyValueObservingProtocol <NSObject>
 
-- (void)pk_registerKeyValueObservers;
+@required
 
+- (void)pk_registerKeyValueObservers;
 - (void)pk_removeKeyValueObservers;
+
+
+@optional
 
 - (void)pk_observeValueForKeyPath:(NSString *)keyPath
                          ofObject:(id)object
