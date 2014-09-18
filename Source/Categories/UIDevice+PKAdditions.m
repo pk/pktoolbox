@@ -17,8 +17,9 @@
     NSString *identifier =
         [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
 
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     identifier =
-        [identifier stringByAppendingString:[[NSBundle mainBundle] bundleIdentifier]];
+        [identifier stringByAppendingString:[bundle bundleIdentifier]];
 
     if (aSalt != nil && [aSalt length] > 0) {
         identifier = [identifier stringByAppendingString:aSalt];
