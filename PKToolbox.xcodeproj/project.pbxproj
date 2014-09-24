@@ -27,7 +27,6 @@
 		E96491AD18280D2500371714 /* PKError.m in Sources */ = {isa = PBXBuildFile; fileRef = E96491A118280D2500371714 /* PKError.m */; };
 		E96491AE18280D2500371714 /* PKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E96491A918280D2500371714 /* PKAlertView.m */; };
 		E96A67F719CB183600DD58CB /* UIDevice+PKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E96A67F519CB183600DD58CB /* UIDevice+PKAdditions.m */; };
-		E96A67F819CB183600DD58CB /* UIDevice+PKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E96A67F519CB183600DD58CB /* UIDevice+PKAdditions.m */; };
 		E98CD26C18283FFD00809DAD /* UIColor+PKAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E98CD26A18283FFA00809DAD /* UIColor+PKAdditionsSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -431,7 +430,6 @@
 				E918FB86195989C3004B312D /* PKPersistentStackSpec.m in Sources */,
 				E94BB09F19C8CF8B009BA803 /* PKToolboxTest.xcdatamodeld in Sources */,
 				E902474C18281F94000948D1 /* NSString+PKAdditionsSpec.m in Sources */,
-				E96A67F819CB183600DD58CB /* UIDevice+PKAdditions.m in Sources */,
 				E94BB09C19C8C6F8009BA803 /* PKManagedObjectContextSpec.m in Sources */,
 				E98CD26C18283FFD00809DAD /* UIColor+PKAdditionsSpec.m in Sources */,
 				E94BD61019CB201700C091A0 /* UIDevice+PKAdditionsSpec.m in Sources */,
