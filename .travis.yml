@@ -1,5 +1,6 @@
 language: objective-c
 xcode_workspace: PKToolbox.xcworkspace
 xcode_scheme: PKToolbox
+xcode_sdk: iphonesimulator7.1
 rvm:
   - "2.1.1"
