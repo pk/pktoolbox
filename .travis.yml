@@ -1,5 +1,5 @@
 language: objective-c
 xcode_workspace: PKToolbox.xcworkspace
-xcode_scheme: PKToolboxTests
+xcode_scheme: PKToolbox
 rvm:
   - "2.1.0"
