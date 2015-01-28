@@ -5,11 +5,10 @@
 //  Created by Pavel Kunc on 04/11/2013.
 //
 
-#import "UIDevice+PKAdditions.h"
-
 #define EXP_SHORTHAND
 #import "Expecta.h"
 #import <Specta/Specta.h>
+#import <OCMock/OCMock.h>
 #import "UIDevice+PKAdditions.h"
 
 SpecBegin(UIDevice_PKAdditions)
@@ -51,6 +50,16 @@ describe(@"pk_availableDiskSpace", ^{
 
     it(@"should return available space in bytes", ^{
         expect([[UIDevice currentDevice] pk_availableDiskSpace]).beGreaterThan(0);
+    });
+
+});
+
+describe (@"pk_sanitizedName", ^{
+
+    it (@"returns device name with non alphanumeric characters replaced with _", ^{
+        id mock = OCMPartialMock([UIDevice currentDevice]);
+        OCMStub([mock name]).andReturn(@"Pavel's iPad Mini 1G");
+        expect([mock pk_sanitizedName]).equal(@"Pavel_s_iPad_Mini_1G");
     });
 
 });

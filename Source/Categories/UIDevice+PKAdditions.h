@@ -53,4 +53,13 @@
  */
 - (NSString *)pk_ipAddress;
 
+/**
+ * Gets device name which is safe to use as filename.
+ *
+ * Replaces all non-alphanumeric characters with underscore (_)
+ *
+ * @return Sanitized device name
+ */
+- (NSString *)pk_sanitizedName;
+
 @end

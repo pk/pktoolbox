@@ -99,5 +99,13 @@
     return totalFreeSpace;
 }
 
+
+#pragma mark - Device name
+
+- (NSString *)pk_sanitizedName {
+    NSCharacterSet *set = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
+    return [[[self name] componentsSeparatedByCharactersInSet:set] componentsJoinedByString:@"_"];
+}
+
 @end
 
