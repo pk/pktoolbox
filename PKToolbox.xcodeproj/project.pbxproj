@@ -16,6 +16,7 @@
 		E9146BE5190823AF00CBC715 /* PKGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9146BE4190823AF00CBC715 /* PKGCDTimer.m */; };
 		E918FB841959874C004B312D /* PKPersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = E918FB821959874C004B312D /* PKPersistentStack.m */; };
 		E918FB86195989C3004B312D /* PKPersistentStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E918FB85195989C3004B312D /* PKPersistentStackSpec.m */; };
+		E94856FD1A62B5320058A0C4 /* PKErrorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E94856FC1A62B5320058A0C4 /* PKErrorSpec.m */; };
 		E94BB09819C8C6E6009BA803 /* PKManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E94BB09719C8C6E6009BA803 /* PKManagedObjectContext.m */; };
 		E94BB09C19C8C6F8009BA803 /* PKManagedObjectContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E94BB09B19C8C6F8009BA803 /* PKManagedObjectContextSpec.m */; };
 		E94BB09F19C8CF8B009BA803 /* PKToolboxTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E94BB09D19C8CF8B009BA803 /* PKToolboxTest.xcdatamodeld */; };
@@ -80,6 +81,7 @@
 		E918FB821959874C004B312D /* PKPersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPersistentStack.m; sourceTree = "<group>"; };
 		E918FB831959874C004B312D /* PKPersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPersistentStack.h; sourceTree = "<group>"; };
 		E918FB85195989C3004B312D /* PKPersistentStackSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPersistentStackSpec.m; sourceTree = "<group>"; };
+		E94856FC1A62B5320058A0C4 /* PKErrorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKErrorSpec.m; sourceTree = "<group>"; };
 		E94BB09619C8C6E6009BA803 /* PKManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKManagedObjectContext.h; sourceTree = "<group>"; };
 		E94BB09719C8C6E6009BA803 /* PKManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKManagedObjectContext.m; sourceTree = "<group>"; };
 		E94BB09B19C8C6F8009BA803 /* PKManagedObjectContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKManagedObjectContextSpec.m; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		E9146BDA190815B600CBC715 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E94856FC1A62B5320058A0C4 /* PKErrorSpec.m */,
 				E918FB85195989C3004B312D /* PKPersistentStackSpec.m */,
 				E9146BE1190823A500CBC715 /* PKGCDTimerSpec.m */,
 				E9146BDB190815B600CBC715 /* PKDurationFormatterSpec.m */,
@@ -424,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94856FD1A62B5320058A0C4 /* PKErrorSpec.m in Sources */,
 				E9146BE2190823A500CBC715 /* PKGCDTimerSpec.m in Sources */,
 				E9146BDC190815B600CBC715 /* PKDurationFormatterSpec.m in Sources */,
 				E9146BD91908083000CBC715 /* PKMacrosSpec.m in Sources */,

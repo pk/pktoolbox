@@ -37,6 +37,32 @@
                BlueprintName = "PKToolboxTests"
                ReferencedContainer = "container:PKToolbox.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "NSString_PKAdditionsSpecSpec">
+               </Test>
+               <Test
+                  Identifier = "PKDurationFormatterSpecSpec">
+               </Test>
+               <Test
+                  Identifier = "PKErrorSpec">
+               </Test>
+               <Test
+                  Identifier = "PKGCDTimerSpecsSpec">
+               </Test>
+               <Test
+                  Identifier = "PKMacrosSpecsSpec">
+               </Test>
+               <Test
+                  Identifier = "PKManagedObjectContextSpecSpec">
+               </Test>
+               <Test
+                  Identifier = "PKPersistentStackSpecsSpec">
+               </Test>
+               <Test
+                  Identifier = "UIColor_PKAdditionsSpecSpec">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
