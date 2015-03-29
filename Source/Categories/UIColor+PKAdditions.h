@@ -12,4 +12,11 @@
 
 + (instancetype)pk_colorWithHexRGBA:(NSUInteger)color;
 
+
++ (instancetype)pk_colorWithColor:(UIColor *)color
+             brightnessAdjustment:(CGFloat)adjustment;
+
+- (UIColor *)pk_colorWithBrightnessAdjustment:(CGFloat)adjustment;
+
+
 @end

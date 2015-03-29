@@ -75,9 +75,11 @@ NSString * const PKPersistentStackErrorDomain =
 - (BOOL)saveWithError:(NSError * __autoreleasing *)outError {
     // Check if we can actually save
     if (self.path == nil) {
-        *outError = [NSError errorWithDomain:PKPersistentStackErrorDomain
-                                        code:PKPersistentStackErrorNoPathProvided
-                                    userInfo:nil];
+        if (outError != NULL) {
+            *outError = [NSError errorWithDomain:PKPersistentStackErrorDomain
+                                            code:PKPersistentStackErrorNoPathProvided
+                                        userInfo:nil];
+        }
         return NO;
     }
 

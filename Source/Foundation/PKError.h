@@ -10,12 +10,16 @@
 
 @interface PKError : NSError
 
++ (NSString *)domain;
+
 + (instancetype)errorWithCode:(NSInteger)code;
 + (instancetype)errorWithCode:(NSInteger)code format:(NSString *)format, ...;
 + (instancetype)errorWithCode:(NSInteger)code description:(NSString *)description;
 + (instancetype)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict;
 
-+ (NSString *)domain;
++ (instancetype)errorWithDomain:(NSString *)domain code:(NSInteger)code;
++ (instancetype)errorWithDomain:(NSString *)domain code:(NSInteger)code format:(NSString *)format, ...;
++ (instancetype)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)description;
 
 @end
 

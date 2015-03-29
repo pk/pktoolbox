@@ -10,6 +10,10 @@
 
 @implementation PKError
 
++ (NSString *)domain {
+    return @"com.override.this.domain";
+}
+
 + (instancetype)errorWithCode:(NSInteger)aCode {
     return [self errorWithCode:aCode description:nil];
 }
@@ -24,27 +28,40 @@
 }
 
 + (instancetype)errorWithCode:(NSInteger)aCode description:(NSString *)aDescription {
-    NSDictionary *userInfo = nil;
-    if (aDescription != nil) {
-        userInfo = [NSDictionary dictionaryWithObjectsAndKeys:aDescription,
-                                                              NSLocalizedDescriptionKey,
-                                                              nil];
-    }
-    return [self errorWithCode:aCode userInfo:userInfo];
+    return [self errorWithDomain:[[self class] domain] code:aCode description:aDescription];
 }
 
 + (instancetype)errorWithCode:(NSInteger)aCode userInfo:(NSDictionary *)aDictionary {
-    return [super errorWithDomain:nil code:aCode userInfo:aDictionary];
+    return [super errorWithDomain:[[self class] domain] code:aCode userInfo:aDictionary];
 }
 
-- (instancetype)initWithDomain:(NSString *)aDomain
-                          code:(NSInteger)aCode
-                      userInfo:(NSDictionary *)aDictionary {
-    return [super initWithDomain:[[self class] domain] code:aCode userInfo:aDictionary];
++ (instancetype)errorWithDomain:(NSString *)aDomain code:(NSInteger)aCode {
+    return [self errorWithDomain:aDomain code:aCode description:nil];
 }
 
-+ (NSString *)domain {
-    return @"com.override.this.domain";
++ (instancetype)errorWithDomain:(NSString *)aDomain
+                           code:(NSInteger)aCode
+                         format:(NSString *)aFormatString, ... {
+    va_list args;
+    va_start(args, aFormatString);
+    NSString *description = [[NSString alloc] initWithFormat:aFormatString arguments:args];
+    va_end(args);
+
+    return [self errorWithDomain:aDomain code:aCode description:description];
+}
+
++ (instancetype)errorWithDomain:(NSString *)aDomain
+                           code:(NSInteger)aCode
+                    description:(NSString *)aDescription {
+
+    NSDictionary *info = nil;
+    if (aDescription != nil) {
+        info = [NSDictionary dictionaryWithObjectsAndKeys:aDescription,
+                                                          NSLocalizedDescriptionKey,
+                                                          nil];
+    }
+
+    return [super errorWithDomain:aDomain code:aCode userInfo:info];
 }
 
 @end

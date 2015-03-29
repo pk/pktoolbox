@@ -17,4 +17,26 @@
                            alpha:(aColor & 0xFF) / 255.0];
 }
 
++ (instancetype)pk_colorWithColor:(UIColor *)aColor
+             brightnessAdjustment:(CGFloat)aAdjustment {
+    CGFloat hue;
+    CGFloat saturation;
+    CGFloat brightness;
+    CGFloat alpha;
+    [aColor getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+
+    brightness = brightness + aAdjustment;
+    brightness = aAdjustment > 0.0 ? MIN(1.0, brightness) : MAX(0.0, brightness);
+
+    UIColor *color = [UIColor colorWithHue:hue
+                                saturation:saturation
+                                brightness:brightness
+                                     alpha:alpha];
+    return color;
+}
+
+- (UIColor *)pk_colorWithBrightnessAdjustment:(CGFloat)aAdjustment {
+    return [[self class] pk_colorWithColor:self brightnessAdjustment:aAdjustment];
+}
+
 @end
